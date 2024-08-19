@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streaming</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style-responsive.css">
+    <link rel="stylesheet" href="servicios.css">
+    <script src="https://kit.fontawesome.com/0e4216b0b7.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="background-blur"></div>
+        <div class="logo">
+            <svg width="auto" height="50" xmlns="http://www.w3.org/2000/svg">
+                <text x="0" y="40" font-family="sans-serif" font-size="30" font-weight="700" fill="white">Karito</text>
+                <text x="90" y="40" font-family="sans-serif" font-size="30" font-weight="700" fill="red">Streaming</text>
+            </svg>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="HOME.html">Inicio</a></li>
+                <li><a href="#acerca">Acerca de Nosotros</a></li>
+                <li class="dropdown">
+                    <a href="#compra">Servicios</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="iptv.html">Iptv</a></li>
+                        <li><a href="musica.html">Musica</a></li>
+                    </ul>
+                </li>
+            </ul>
+                </li>
+            </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+        <button class="search-toggle" aria-label="Abrir búsqueda">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <div class="search-box" id="search-box">
+            <input type="text" id="search" placeholder="Buscar...">
+        </div>
+    </header>
+    <main>
+        <section id="servicios">
+            <h1>Compra Nuestros Servicios</h1>
+            <div class="service-container">
+                <!-- Servicio 1 -->
+                <div class="service-box">
+                    <img src="service1.jpg" alt="Servicio 1">
+                    <h2>Servicio 1</h2>
+                    <p>Descripción breve del servicio 1.</p>
+                    <a href="#" class="btn-buy" data-amount="50.00">Comprar</a>
+                </div>
+                <!-- Servicio 2 -->
+                <div class="service-box">
+                    <img src="service2.jpg" alt="Servicio 2">
+                    <h2>Servicio 2</h2>
+                    <p>Descripción breve del servicio 2.</p>
+                    <a href="#" class="btn-buy" data-amount="75.00">Comprar</a>
+                </div>
+                <!-- Servicio 3 -->
+                <div class="service-box">
+                    <img src="service3.jpg" alt="Servicio 3">
+                    <h2>Servicio 3</h2>
+                    <p>Descripción breve del servicio 3.</p>
+                    <a href="#" class="btn-buy" data-amount="100.00">Comprar</a>
+                </div>
+                <!-- Servicio 4 -->
+                <div class="service-box">
+                    <img src="service4.jpg" alt="Servicio 4">
+                    <h2>Servicio 4</h2>
+                    <p>Descripción breve del servicio 4.</p>
+                    <a href="#" class="btn-buy" data-amount="120.00">Comprar</a>
+                </div>
+            </div>
+        </section>
+    </main>
+        <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3><i class="fas fa-info-circle"></i> Nosotros</h3>
+                <p>Conoce más sobre nuestra empresa, nuestra misión y visión, y nuestro equipo de trabajo.</p>
+                <a href="#about-us" class="footer-link">Leer más</a>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-store"></i> Tienda</h3>
+                <ul class="footer-list">
+                    <li><a href="#shop" class="footer-link"><i class="fas fa-box"></i> Nuestra Tienda</a></li>
+                    <li><a href="#products" class="footer-link"><i class="fas fa-tag"></i> Productos</a></li>
+                    <li><a href="#offers" class="footer-link"><i class="fas fa-percent"></i> Ofertas Especiales</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-address-card"></i> Contacto</h3>
+                <p>Dirección: Calle Ejemplo 123, Ciudad, País</p>
+                <p>Teléfono: (123) 456-7890</p>
+                <p>Email: contacto@ejemplo.com</p>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-share-alt"></i> Redes Sociales</h3>
+                <a href="https://facebook.com" target="_blank" class="footer-social-link"><i class="fab fa-facebook-f"></i> Facebook</a>
+                <a href="https://twitter.com" target="_blank" class="footer-social-link"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="https://instagram.com" target="_blank" class="footer-social-link"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="https://linkedin.com" target="_blank" class="footer-social-link"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Tu Empresa. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
+
+
+    <!-- Modal -->
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Realizar Pago</h2>
+            

@@ -1,0 +1,323 @@
+/* Estilo general del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-image: url("https://tclelectronics.co.nz/wp-content/uploads/tcl-Best-Streaming-Apps-2022.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+/* Fondo borroso y oscuro */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    z-index: -1;
+}
+
+/* Estilo del encabezado */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #000;
+    color: white;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Estilo del logo */
+.logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    margin-right: 20px; /* Espacio entre el logo y el menú */
+}
+
+.logo svg {
+    height: 50px; /* Ajusta el tamaño del logo */
+    width: auto; /* Mantiene la proporción del logo */
+    max-width: 100%; /* Asegura que el logo no se desborde del contenedor */
+}
+
+/* Estilo de la navegación */
+nav {
+    flex: 1;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Centra los elementos del menú */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra horizontalmente los elementos del menú */
+    flex-wrap: wrap; /* Permite que el menú se ajuste en pantallas pequeñas */
+}
+
+nav ul li {
+    position: relative;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    display: block;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    border-bottom: 2px solid red;
+}
+
+/* Menú desplegable */
+.dropdown {
+    position: relative;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    z-index: 1;
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #555;
+}
+
+/* Estilo del contenedor de búsqueda */
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    position: relative;
+}
+
+.search-container input {
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    width: 200px;
+    outline: none;
+    transition: width 0.3s ease;
+}
+
+.search-container input:focus {
+    width: 300px;
+}
+
+.search-box {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 200px;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 100;
+}
+
+.search-box div {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.search-box div:hover {
+    background-color: #f0f0f0;
+}
+
+/* Estilo del menú toggle para pantallas pequeñas */
+.menu-toggle {
+    display: none;
+}
+
+/* Estilo del carrusel de imágenes */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    overflow: hidden;
+    margin-bottom: 50px; /* Espacio entre el párrafo y el carrusel */
+    border-radius: 15px; /* Bordes redondeados del carrusel */
+    border: 2px solid #fff; /* Borde del carrusel */
+}
+
+.carousel-images {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease; /* Transición más fluida */
+}
+
+.carousel-images img {
+    width: 100%;
+    height: 100%; /* Ajusta la altura de las imágenes para llenar el contenedor */
+    object-fit: cover; /* Ajusta las imágenes para que cubran el contenedor */
+}
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s, width 0.3s;
+}
+
+.indicator.active {
+    width: 24px;
+    border-radius: 12px;
+    opacity: 1;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .carousel {
+        max-height: 300px;
+    }
+
+    .carousel-indicators {
+        bottom: 5px;
+        right: 5px;
+    }
+}
+
+/* Estilo de la sección de inicio */
+#inicio {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    color: white;
+    text-align: justify;
+    position: relative;
+}
+
+#inicio p {
+    margin: 0;
+    margin-bottom: 50px; /* Espacio entre el párrafo y el carrusel */
+}
+
+/* Estilo del texto adicional */
+#show-more {
+    color: red;
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+#more-content {
+    display: none;
+}
+
+/* Estilo del pie de página */
+footer {
+    background-color: #000000d3;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    z-index: 10;
+    box-sizing: border-box;
+    margin-top: auto;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    /* Ajustar el tamaño del logo en pantallas pequeñas */
+    .logo {
+        margin-right: auto;
+        flex: auto;
+    }
+
+    .logo svg {
+        height: auto;
+        width: auto;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #000;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        background-color: #000;
+        color: white;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .search-container {
+        display: none;
+    }
+
+    .service-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}

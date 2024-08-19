@@ -1,0 +1,651 @@
+/* Estilo general del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-image: url("https://tclelectronics.co.nz/wp-content/uploads/tcl-Best-Streaming-Apps-2022.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden; /* Evitar barras laterales horizontales */
+    box-sizing: border-box;
+}
+
+/* Fondo borroso y oscuro */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    z-index: -1;
+}
+
+/* Estilo del encabezado */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #000;
+    color: white;
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Estilo del logo */
+.logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    margin-right: 20px; /* Espacio entre el logo y el menú */
+}
+
+.logo svg {
+    height: 50px; /* Ajusta el tamaño del logo */
+    width: auto; /* Mantiene la proporción del logo */
+    max-width: 100%; /* Asegura que el logo no se desborde del contenedor */
+}
+
+/* Estilo de la navegación */
+nav {
+    flex: 1;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Centra los elementos del menú */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra horizontalmente los elementos del menú */
+    flex-wrap: wrap; /* Permite que el menú se ajuste en pantallas pequeñas */
+}
+
+nav ul li {
+    position: relative;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    display: block;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    border-bottom: 2px solid red;
+}
+
+/* Menú desplegable */
+.dropdown {
+    position: relative;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    z-index: 1;
+}
+
+.dropdown-menu li {
+    margin: 0;
+}
+
+.dropdown-menu li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #555;
+}
+/* Estilo del contenedor de búsqueda para pantallas grandes */
+.search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Icono del buscador */
+.search-toggle {
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    margin-left: 10px;
+    z-index: 10;
+}
+
+/* Estilo del contenedor del campo de búsqueda para pantallas grandes */
+.search-box {
+    position: absolute;
+    top: calc(100% + 5px); /* Espacio hacia abajo */
+    right: 0; /* Alineado a la derecha */
+    width: 300px; /* Ancho más largo */
+    background-color: #000;
+    padding: 5px; /* Ajusta el padding */
+    border-radius: 0; /* Sin borde circular */
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efecto visual */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+    z-index: 20; /* Asegura que esté sobre otros elementos */
+}
+
+/* Estilo del campo de entrada dentro del contenedor de búsqueda */
+.search-box input {
+    border: none;
+    border-radius: 0; /* Sin borde circular */
+    padding: 10px; /* Ajusta el padding */
+    width: 100%;
+    outline: none;
+    background-color: #000;
+    color: #fff;
+}
+
+/* Mostrar el contenedor de búsqueda al hacer hover sobre el ícono */
+.search-toggle:hover + .search-box {
+    display: block;
+    opacity: 1;
+}
+
+/* Estilo del carrusel de imágenes */
+.carousel {
+    position: relative;
+    width: 100%; 
+    height: auto;
+    max-height: 500px;
+    overflow: hidden;
+    margin-bottom: 50px; /* Espacio entre el párrafo y el carrusel */
+    border-radius: 15px; /* Bordes redondeados del carrusel */
+    border: none; /* Borde del carrusel */
+    display: flex; /* Flex para centrar el contenido */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+}
+
+.carousel-images {
+    display: flex;
+    width: 100%;
+    height: 100%; /* Asegura que las imágenes llenen el contenedor */
+    transition: transform 0.5s ease; /* Transición más fluida */
+}
+
+.carousel-images img {
+    width: 100%;
+    height: auto; /* Mantiene la proporción */
+    object-fit: cover; /* Ajusta las imágenes para que cubran el contenedor */
+    display: block; /* Asegura que las imágenes se alineen correctamente */
+}
+
+/* Indicadores del carrusel */
+.carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s, width 0.3s;
+}
+
+.indicator.active {
+    width: 40px;
+    border-radius: 12px;
+    opacity: 1;
+}
+
+/* Estilo de la sección de inicio */
+#inicio {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    color: white;
+    text-align: justify;
+    position: relative;
+}
+
+#inicio p {
+    margin: 0;
+    margin-bottom: 50px; /* Espacio entre el párrafo y el carrusel */
+    font-size: 20px;
+}
+
+/* Estilo del texto adicional */
+#show-more {
+    color: red;
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+#more-content {
+    display: none;
+}
+
+/* Estilo del contenedor de la galería */
+#galeria {
+    background: rgba(0, 0, 0, 0.8); /* Fondo negro transparente */
+    backdrop-filter: blur(8px); /* Efecto de desenfoque */
+    padding: 40px 20px; /* Añadir espacio lateral */
+    margin: 20px auto; /* Centra la sección en la página */
+    width: 100%;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+/* Estilo del encabezado de la galería */
+#galeria h2 {
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo del contenedor de los elementos de la galería */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre los elementos */
+    justify-content: center; /* Centra los elementos en la galería */
+}
+
+/* Estilo de los elementos de la galería */
+.gallery-item {
+    flex: 1 1 calc(50% - 20px); /* Ocupa el 50% del ancho menos el espacio entre los elementos */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 500px; /* Ancho máximo para las imágenes */
+}
+
+/* Estilo de las imágenes */
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra sutil */
+    border-radius: 5px;
+}
+
+/* Estilo del párrafo debajo de las imágenes */
+.gallery-item p {
+    margin-top: 10px;
+    color: #fff; /* Color del texto para contraste con el fondo */
+    font-size: 16px; /* Ajusta el tamaño del texto */
+    text-align: center; /* Centra el texto debajo de la imagen */
+}
+.sales-carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: transparent;
+    padding: 0; /* Elimina el padding para evitar recortes */
+    box-sizing: border-box;
+}
+
+.sales-carousel-wrapper {
+    display: flex;
+    overflow-x: auto; /* Permite el desplazamiento horizontal */
+    scroll-behavior: smooth; /* Suaviza el desplazamiento */
+    width: 100%;
+}
+
+.sales-carousel {
+    display: flex;
+    width: 100%;
+}
+
+.sales-item {
+    flex: 0 0 auto; /* Ajusta el ancho automáticamente según el contenido */
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    background-color: transparent;
+    width: 20%; /* Ajusta el ancho según sea necesario */
+}
+
+.sales-item img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.sales-item-title {
+    margin: 10px 0;
+    color: #fff;
+}
+
+h3 {
+    margin: 0; /* Elimina el margen por defecto */
+    padding: 0; /* Elimina el padding por defecto */
+    line-height: 1.2; /* Ajusta la altura de la línea para mayor control */
+}
+
+h3.space-adjustment {
+    margin: 10px 0; /* Ajusta el margen superior e inferior como desees */
+    padding: 0 5px; /* Ajusta el padding si necesitas más espacio dentro del h3 */
+}
+
+.sales-buy-button {
+    display: block;
+    margin: 10px auto 20px; /* Agrega espacio entre el título y el botón */
+    background-color: transparent; /* Fondo transparente */
+    border: 2px solid #fff; /* Borde blanco */
+    color: #fff; /* Texto blanco */
+    padding: 6px 12px; /* Tamaño más pequeño */
+    font-size: 16px; /* Texto más pequeño */
+    border-radius: none;
+    cursor: pointer;
+    transition: border-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    text-align: center; /* Alinea el texto en el centro */
+}
+
+.sales-buy-button:hover {
+    border-color: #ff0000; /* Borde rojo al pasar el cursor */
+    color: #ff0000; /* Texto rojo */
+    background-color: transparent; /* Fondo transparente */
+    transform: scale(1.05); /* Escala ligeramente el botón */
+}
+
+.sales-carousel-prev,
+.sales-carousel-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #fff; /* Borde blanco */
+    background-color: transparent; /* Fondo transparente */
+    color: #fff; /* Color del ícono */
+    font-size: 20px; /* Tamaño del ícono */
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sales-carousel-prev {
+    left: 10px; /* Espacio desde el borde izquierdo */
+}
+
+.sales-carousel-next {
+    right: 10px; /* Espacio desde el borde derecho */
+}
+
+.sales-carousel-prev:hover,
+.sales-carousel-next:hover {
+    background-color: #fff; /* Fondo blanco al pasar el ratón */
+    color: #333; /* Color del ícono al pasar el ratón */
+}
+
+.carousel-scrollbar {
+    display: none; /* Oculta la barra de desplazamiento */
+}
+
+.scrollbar-thumb {
+    display: none; /* Oculta el "thumb" */
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente negro */
+}
+
+.modal-content {
+    background-color: rgba(0, 0, 0, 0.9);
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    text-align: center;
+}
+
+.modal-content img {
+    width: 80%;
+    max-height: 200px; /* Imagen más pequeña */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.modal-content h2 {
+    font-size: 22px;
+    color: #fff; /* Texto blanco */
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    font-size: 14px;
+    color: #fff; /* Texto blanco */
+    margin-bottom: 20px;
+}
+
+.modal-content button {
+    display: block;
+    margin: 10px auto 20px; /* Agrega espacio entre el título y el botón */
+    background-color: transparent; /* Fondo transparente */
+    border: 2px solid #fff; /* Borde blanco */
+    color: #fff; /* Texto blanco */
+    padding: 6px 12px; /* Tamaño más pequeño */
+    font-size: 16px; /* Texto más pequeño */
+    border-radius: none;
+    cursor: pointer;
+    transition: border-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    text-align: center; /* Alinea el texto en el centro */
+}
+
+.modal-content button:hover {
+    border-color: #ff0000; /* Borde rojo al pasar el cursor */
+    color: #ff0000; /* Texto rojo */
+    background-color: transparent; /* Fondo transparente */
+    transform: scale(1.05); /* Escala ligeramente el botón */
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #fff; /* Color blanco para la X */
+    cursor: pointer;
+}
+
+
+/* Estilo del contenedor de preguntas frecuentes */
+#faq {
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
+    padding: 40px 20px;
+    margin: 20px auto; /* Centra la sección en la página */
+    max-width: 1200px; /* Ancho máximo de la sección */
+    box-sizing: border-box;
+}
+
+/* Estilo del encabezado de la sección */
+#faq h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo de los elementos de preguntas frecuentes */
+.faq-item {
+    margin-bottom: 20px;
+}
+
+/* Estilo de las preguntas */
+.faq-question {
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    margin: 0;
+    background: #000;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Estilo de la respuesta */
+.faq-answer {
+    color: #ddd;
+    font-size: 16px;
+    padding: 10px;
+    border-top: 1px solid #555;
+    display: none; /* Oculta la respuesta por defecto */
+}
+
+/* Cambia el color del encabezado al pasar el ratón */
+.faq-question:hover {
+    background: #555;
+    color: #fff;
+}
+
+/* Mostrar la respuesta al hacer clic en la pregunta */
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+.footer {
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1 1 200px;
+    margin: 10px;
+}
+
+.footer-section h3 {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+}
+
+.footer-section h3 i {
+    margin-right: 10px;
+}
+
+.footer-section p,
+.footer-section ul {
+    margin: 0;
+    padding: 0;
+}
+
+.footer-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-list li {
+    margin-bottom: 10px;
+}
+
+.footer-link {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.footer-link i {
+    margin-right: 10px;
+}
+
+.footer-link:hover {
+    color: #26e07f;
+}
+
+.footer-social-link {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.footer-social-link i {
+    margin-right: 10px;
+}
+
+.footer-social-link:hover {
+    color: #26e07f;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 20px;
+    border-top: 1px solid #444;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+
+

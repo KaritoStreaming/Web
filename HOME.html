@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karito Streaming</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style-responsive.css">
+    <script src="https://kit.fontawesome.com/0e4216b0b7.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="background-blur"></div>
+        <div class="logo">
+            <svg width="auto" height="50" xmlns="http://www.w3.org/2000/svg">
+                <text x="0" y="40" font-family="sans-serif" font-size="30" font-weight="700" fill="white">Karito</text>
+                <text x="90" y="40" font-family="sans-serif" font-size="30" font-weight="700" fill="red">Streaming</text>
+            </svg>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="HOME.html">Inicio</a></li>
+                <li><a href="#acerca">Acerca de Nosotros</a></li>
+                <li class="dropdown">
+                    <a href="#compra">Servicios</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="streaming.html">Streaming</a></li>
+                        <li><a href="iptv.html">Iptv</a></li>
+                        <li><a href="musica.html">Musica</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+        <button class="search-toggle" aria-label="Abrir búsqueda">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <div class="search-box" id="search-box">
+            <input type="text" id="search" placeholder="Buscar...">
+        </div>
+    </header>
+    
+    <main>
+        <section id="inicio">
+            <div class="carousel">
+                <div class="carousel-images">
+                    <img src="image1.jpg" alt="Imagen 1">
+                    <img src="image2.jpg" alt="Imagen 2">
+                    <img src="image3.jpg" alt="Imagen 3">
+                </div>
+                <div class="carousel-indicators">
+                    <span class="indicator active" data-slide="0"></span>
+                    <span class="indicator" data-slide="1"></span>
+                    <span class="indicator" data-slide="2"></span>
+                </div>
+            </div>
+
+            <p class="text-content">
+                Karito Streaming ofrece plataformas de streaming de alta calidad, 
+                asegurando una excelente experiencia de visualización con seguridad 
+                y soporte confiable. Disfruta de contenidos con claridad y sin interrupciones,
+                respaldados por un equipo dedicado.
+                <span id="more-content" style="display: none;">
+                    Nuestras plataformas garantizan una transmisión fluida, excelente calidad 
+                    de imagen y sonido, y protección de tus datos. Además, siempre estamos aquí para ayudarte.
+                </span>
+                <a href="#" id="show-more">Ver más</a>
+            </p>
+        </section>
+        
+        <section id="galeria">
+            <h2>Nuestros Demás Productos</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="iptv.jpg" alt="IPTV">
+                    <p>IPTV: Disfruta de una amplia variedad de canales y contenido a través de Internet.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="streaming.jpg" alt="Plataformas de Streaming">
+                    <p>Plataformas de Streaming: Accede a tus películas y series favoritas en cualquier momento.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="spotify.jpg" alt="Spotify">
+                    <p>Spotify: Música sin límites con tu servicio de streaming favorito.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="youtube premium.jpg" alt="YouTube Premium">
+                    <p>YouTube Premium: Disfruta de contenido exclusivo sin anuncios.</p>
+                </div>
+            </div>
+        </section>
+
+<main>
+    <div class="sales-carousel-container">
+        <button class="sales-carousel-prev">&#9664;</button>
+        <div class="sales-carousel-wrapper">
+            <div class="sales-carousel">
+                <div class="sales-item">
+                    <img src="hbomax.png" alt="Hbo Max">
+                    <div class="sales-item-title">
+                        <h3>Hbo Max</h3>
+                    </div>
+                    <button class="sales-buy-button" data-title="Hbo Max" data-description="HBO Max es una plataforma de streaming que ofrece una gran variedad de contenido, incluyendo series originales de HBO, películas de Warner Bros, y otras franquicias populares. Entre sus exclusividades destacan series aclamadas como *Game of Thrones* y *The Last of Us*, además de películas de estreno y contenido de DC Comics. Es conocida por su alta calidad y por su amplia oferta de entretenimiento." data-image="hbomax.png">Adquiere</button>
+                </div>
+                <div class="sales-item">
+                    <img src="netflix.png" alt="Netflix">
+                    <div class="sales-item-title">
+                        <h3>Netflix</h3>
+                    </div>
+                    <button class="sales-buy-button" data-title="Netflix" data-description="Netflix es una plataforma de streaming que ofrece una amplia gama de series, películas, documentales y contenido original. Se destaca por su extenso catálogo que incluye populares producciones originales como *Stranger Things*, *The Crown* y *Bridgerton*. Netflix es conocida por su capacidad para ofrecer una gran variedad de géneros y estilos, y por sus innovadoras series y películas exclusivas." data-image="netflix.png">Adquiere</button>
+                </div>
+                <div class="sales-item">
+                    <img src="amazon.png" alt="Amazon Prime">
+                    <div class="sales-item-title">
+                        <h3 class="space-adjustment">Amazon Prime</h3>
+
+                    </div>
+                    <button class="sales-buy-button" data-title="Amazon Prime" data-description=" Ofrece una gran selección de series, películas y contenido original. Destaca por producciones exclusivas como The Marvelous Mrs. Maisel y The Boys. También incluye acceso a Amazon Channels para añadir otros servicios de streaming." data-image="amazon.png">Adquiere</button>
+                </div>
+                <div class="sales-item">
+                    <img src="disney.png" alt="Disney +">
+                    <div class="sales-item-title">
+                        <h3>Disney +</h3>
+                    </div>
+                    <button class="sales-buy-button" data-title="Disney +" data-description="Especializada en contenido de Disney, Pixar, Marvel, Star Wars y National Geographic. Ofrece series y películas icónicas, como The Mandalorian y Loki, además de clásicos de Disney y contenido familiar." data-image="disney.png">Adquiere</button>
+                </div>
+                <div class="sales-item">
+                    <img src="para.png" alt="Paramount">
+                    <div class="sales-item-title">
+                        <h3>Paramount </h3>
+                    </div>
+                    <button class="sales-buy-button" data-title="Paramount +" data-description="Incluye contenido de Paramount Pictures, CBS, y otros, ofreciendo series como Star Trek: Strange New Worlds y Yellowstone, además de una buena selección de películas y programas de televisión." data-image="para.png">Adquiere</button>
+                </div>
+                <div class="sales-item">
+                    <img src="spotify.png" alt="Spotify">
+                    <div class="sales-item-title">
+                        <h3>Spotify</h3>
+                    </div>
+                    <button class="sales-buy-button" data-title="Spotify" data-description="Principalmente una plataforma de streaming de música que ofrece millones de canciones, listas de reproducción y podcasts. Conocida por sus recomendaciones personalizadas y funciones como Spotify Wrapped." data-image="spotify.png">Adquiere</button>
+                </div>
+                <div class="sales-item">
+                    <img src="iptv.png" alt="Iptv">
+                    <div class="sales-item-title">
+                        <h3>Iptv</h3>
+                    </div>
+                    <button class="sales-buy-button" data-title="Iptv" data-description="Proporciona televisión a través de internet en lugar de métodos tradicionales como antenas o cable. Ofrece acceso a canales en vivo y a menudo permite ver contenido bajo demanda." data-image="iptv.png">Adquiere</button>
+                </div>
+            </div>
+        </div>
+        <button class="sales-carousel-next">&#9654;</button>
+    </div>
+    
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <img id="modal-image" src="" alt="">
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+            <button id="modal-buy-button">Comprar Ya</button>
+        </div>
+    </div>
+</main>
+
+<!-- Sección de Preguntas Frecuentes -->
+<section id="faq">
+    <div class="faq-container">
+        <h2>Preguntas Frecuentes</h2>
+        <div class="faq-item">
+            <h3 class="faq-question">¿Cuál es el horario de atención al cliente?</h3>
+            <p class="faq-answer">Nuestro horario de atención es de lunes a viernes de 9:00 a 18:00.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">¿Cómo puedo realizar un pedido?</h3>
+            <p class="faq-answer">Para realizar un pedido, simplemente agrega los productos deseados a tu carrito y sigue el proceso de pago en línea.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">¿Ofrecen envío internacional?</h3>
+            <p class="faq-answer">Sí, ofrecemos envío internacional. Los costos y tiempos de envío varían según el destino.</p>
+        </div>
+        <div class="faq-item">
+            <h3 class="faq-question">¿Cuál es la política de devoluciones?</h3>
+            <p class="faq-answer">Aceptamos devoluciones dentro de los 30 días posteriores a la compra. Los productos deben estar en su estado original.</p>
+        </div>
+    </div>
+</section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3><i class="fas fa-info-circle"></i> Nosotros</h3>
+                <p>Conoce más sobre nuestra empresa, nuestra misión y visión, y nuestro equipo de trabajo.</p>
+                <a href="#about-us" class="footer-link">Leer más</a>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-store"></i> Tienda</h3>
+                <ul class="footer-list">
+                    <li><a href="#shop" class="footer-link"><i class="fas fa-box"></i> Nuestra Tienda</a></li>
+                    <li><a href="#products" class="footer-link"><i class="fas fa-tag"></i> Productos</a></li>
+                    <li><a href="#offers" class="footer-link"><i class="fas fa-percent"></i> Ofertas Especiales</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-address-card"></i> Contacto</h3>
+                <p>Dirección: Calle Ejemplo 123, Ciudad, País</p>
+                <p>Teléfono: (123) 456-7890</p>
+                <p>Email: contacto@ejemplo.com</p>
+            </div>
+            <div class="footer-section">
+                <h3><i class="fas fa-share-alt"></i> Redes Sociales</h3>
+                <a href="https://facebook.com" target="_blank" class="footer-social-link"><i class="fab fa-facebook-f"></i> Facebook</a>
+                <a href="https://twitter.com" target="_blank" class="footer-social-link"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="https://instagram.com" target="_blank" class="footer-social-link"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="https://linkedin.com" target="_blank" class="footer-social-link"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Tu Empresa. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+    <script src="carousel.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+/* Estilo general para pantallas grandes (1200px y más) */
+@media (min-width: 1200px) {
+    .search-container {
+        display: flex; /* Mostrar el contenedor de búsqueda en pantallas grandes */
+    }
+
+    .search-box {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 200px;
+        background-color: #000;
+        padding: 5px;
+        border-radius: 5px;
+        display: none; /* Oculto por defecto */
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .search-toggle:hover + .search-box {
+        display: block;
+        opacity: 1;
+    }
+
+    nav ul {
+        display: flex; /* Mostrar el menú normalmente en pantallas grandes */
+        flex-direction: row; /* Alinear los elementos del menú en fila */
+        background-color: transparent; /* Fondo transparente para el menú en pantallas grandes */
+        position: static; /* Posición estática para el menú en pantallas grandes */
+    }
+
+    .menu-toggle {
+        display: none; /* Ocultar el ícono del menú toggle en pantallas grandes */
+    }
+}
+
+/* Estilo para pantallas de tabletas (786px a 1199px) */
+@media (min-width: 786px) and (max-width: 1199px) {
+    .carousel {
+        max-height: 300px;
+    }
+
+    .carousel-indicators {
+        bottom: 5px;
+        right: 5px;
+    }
+
+    .search-container {
+        display: flex; /* Mostrar el contenedor de búsqueda en tabletas */
+    }
+
+    .search-box {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 150px; /* Ajustar el ancho del contenedor */
+        background-color: #000;
+        padding: 5px;
+        border-radius: 5px;
+        display: none; /* Oculto por defecto */
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .search-toggle:hover + .search-box {
+        display: block;
+        opacity: 1;
+    }
+
+    nav ul {
+        display: flex; /* Mostrar el menú en tabletas */
+        flex-direction: row; /* Alinear los elementos del menú en fila */
+        background-color: transparent; /* Fondo transparente para el menú */
+        position: static; /* Posición estática para el menú */
+    }
+
+    .menu-toggle {
+        display: none; /* Ocultar el ícono del menú toggle en tabletas */
+    }
+
+    #inicio {
+        padding: 15px;
+    }
+
+    #inicio p {
+        font-size: 16px; /* Reduce el tamaño de la fuente en tabletas */
+        margin-bottom: 40px; /* Ajusta el margen inferior */
+    }
+    p{
+        margin: 0;
+        margin-bottom: 50px
+        font-size: 16px
+    }
+}
+
+/* Estilo para pantallas de móviles (480px a 785px) */
+@media (max-width: 785px) {
+    #inicio {
+        padding: 15px;
+    }
+
+    #inicio p {
+        font-size: 16px; /* Reduce el tamaño de la fuente en tabletas */
+        margin-bottom: 40px; /* Ajusta el margen inferior */
+    }
+    p{
+        margin: 0;
+        margin-bottom: 50px
+        font-size: 16px
+    }
+    .carousel {
+        max-height: 300px;
+    }
+
+    .carousel-indicators {
+        bottom: 5px;
+        right: 5px;
+    }
+
+    .search-container {
+        display: none; /* Oculta el contenedor de búsqueda en pantallas pequeñas */
+    }
+
+    .search-box {
+        position: fixed; /* Cambia a fixed para asegurar que el contenedor se ajuste a la pantalla */
+        top: 60px; /* Ajusta según el espacio disponible */
+        right: 0;
+        width: 100%;
+        max-width: 100%; /* Asegura que el contenedor no exceda el ancho de la pantalla */
+        padding: 10px;
+        border-radius: 0; /* Elimina los bordes redondeados */
+        box-sizing: border-box;
+        background-color: #000;
+    }
+
+    nav ul {
+        display: none; /* Oculta el menú en pantallas pequeñas */
+        flex-direction: column;
+        background-color: #000;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+    }
+
+    nav ul.active {
+        display: flex; /* Muestra el menú cuando esté activo */
+    }
+
+    .menu-toggle {
+        display: block; /* Muestra el ícono del menú toggle en pantallas pequeñas */
+        background-color: #000;
+        color: white;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    .logo {
+        margin-right: auto;
+        flex: auto;
+    }
+
+    .logo svg {
+        height: auto;
+        width: auto;
+    }
+}
+@media (max-width: 768px) {
+    #inicio {
+        padding: 15px;
+    }
+
+    #inicio p {
+        font-size: 16px; /* Reduce el tamaño de la fuente en tabletas */
+        margin-bottom: 40px; /* Ajusta el margen inferior */
+    }
+    p{
+        margin: 0;
+        margin-bottom: 50px
+        font-size: 16px
+    }
+    .sales-carousel-container {
+        padding: 0;
+    }
+
+    .sales-carousel-wrapper {
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+    }
+
+    .sales-item {
+        flex: 0 0 33.33%;
+        display: inline-block;
+        width: 33.33%;
+    }
+    .carousel-scrollbar {
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        height: 5px;
+        background-color: #ccc;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    .scrollbar-thumb {
+        height: 100%;
+        background-color: #333;
+        border-radius: 5px;
+        width: 33.33%;
+        transition: transform 0.3s ease;
+        position: relative;
+    }
+
+    .sales-carousel-prev,
+    .sales-carousel-next {
+        display: none;
+    }
+}
+
