@@ -1,0 +1,362 @@
+/* responsive */
+@media screen and (max-width: 1160px) {
+  .nav {
+    padding: 15px 100px;
+  }
+  .nav .search-box {
+    right: 150px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .logo {
+  font-size: 27px;
+}
+  .nav {
+    padding: 15px 50px;
+  }
+  .nav .search-box {
+    right: 100px;
+    max-width: 400px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .logo {
+  font-size: 25px;
+}
+  .nav .navOpenBtn,
+  .nav .navCloseBtn {
+    display: block;
+  }
+  .nav {
+    padding: 15px 20px;
+  }
+  .nav .nav-links {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    max-width: 280px;
+    width: 100%;
+    padding-top: 100px;
+    row-gap: 30px;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semitransparente */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    transition: all 0.4s ease;
+    z-index: 100;
+  }
+  .nav.openNav .nav-links {
+    left: 0;
+  }
+  .nav .navOpenBtn {
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .nav .navCloseBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .nav .search-box {
+    top: calc(100% + 10px);
+    max-width: calc(100% - 20px);
+    right: 50%;
+    transform: translateX(50%);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+}
+
+/* Para pantallas pequeñas y móviles (480px a 785px) */
+@media (max-width: 785px) {
+    /* Estilo base para el menú desplegable */
+    .dropdown-menu {
+        display: none; /* Oculto por defecto */
+        position: static; /* Cambiado de absolute a static */
+        top: auto; /* Eliminado top */
+        left: auto; /* Eliminado left */
+        background-color: transparent; /* Eliminado fondo */
+        list-style: none; /* Elimina la numeración */
+        padding: 0; /* Eliminado espaciado interno */
+        margin: 15px 0 0 0; /* Espacio entre el nav-link y el dropdown */
+        min-width: 0; /* Ancho mínimo eliminado */
+        border-radius: 0; /* Eliminado bordes redondeados */
+        box-shadow: none; /* Eliminada la sombra */
+        opacity: 0; /* Oculta el contenido */
+        visibility: hidden; /* Hace que el contenido no sea visible */
+        transition: none; /* Sin transición */
+        z-index: auto; /* Eliminado z-index */
+    }
+    
+    .dropdown-menu li {
+        width: auto; /* Ancho automático */
+        margin-bottom: 10px; /* Espacio entre las opciones */
+    }
+    
+    /* Eliminar el margen para el último elemento */
+    .dropdown-menu li:last-child {
+        margin-bottom: 0;
+    }
+    
+    .dropdown-menu a {
+        padding: 0; /* Eliminado padding */
+        color: #fff; /* Color del texto en el dropdown */
+        text-decoration: none; /* Elimina el subrayado */
+        display: block;
+        font-size: 16px; /* Tamaño de texto más grande */
+        position: static; /* Eliminado posición relativa */
+        transition: none; /* Sin transición en color */
+    }
+    
+    .dropdown-menu a::after {
+        content: '';
+        position: static; /* Cambiado de absolute a static */
+        width: 0; /* Sin línea inferior */
+        height: 0; /* Sin altura */
+        background-color: transparent; /* Sin color de fondo */
+        transition: none; /* Sin transición */
+    }
+    
+    /* Mostrar el dropdown cuando se haga clic en el enlace padre */
+    .dropdown.active .dropdown-menu {
+        display: block; /* Muestra el dropdown */
+        opacity: 1; /* Hace visible el contenido */
+        visibility: visible; /* Asegura que el contenido sea visible */
+    }
+    
+    /* Efecto hover: Solo la línea inferior se pinta de rojo */
+    .dropdown-menu a:hover::after {
+        width: 0; /* Sin expansión de la línea */
+    }
+    
+    .dropdown-menu a:hover {
+        color: #fff; /* Mantiene el color del texto blanco */
+    }
+  
+}
+
+
+/*aparte del menu
+/* Estilo general para pantallas grandes (1200px y más) */
+@media (min-width: 1200px) {
+    .carousel {
+        max-height: 550px;
+    }
+
+    .carousel-indicators {
+        bottom: 5px;
+        right: 5px;
+    }
+
+/* Ocultar el scrollbar completamente */
+.carousel-scrollbar {
+    display: none;
+}
+.carousel-scrollbar {
+    visibility: hidden; /* Hace el scrollbar invisible */
+    pointer-events: none; /* Evita que el scrollbar interactúe con el usuario */
+}
+
+.scrollbar-thumb {
+    background-color: #333; /* Color básico */
+    box-shadow: none;
+}
+
+
+}
+
+/* Estilo para pantallas de tabletas (786px a 1199px) */
+@media (min-width: 786px) and (max-width: 1199px) {
+    .carousel {
+        max-height: 500px;
+    }
+
+    .carousel-indicators {
+        bottom: 5px;
+        right: 5px;
+    }
+
+        #inicio {
+        padding: 15px;
+    }
+
+    #inicio p {
+        font-size: 16px; /* Reduce el tamaño de la fuente en tabletas */
+        margin-bottom: 40px; /* Ajusta el margen inferior */
+    }
+    p{
+        margin: 0;
+        margin-bottom: 50px;
+        font-size: 16px;
+    }
+    /* Ocultar el scrollbar completamente */
+    .carousel-scrollbar {
+        display: none;
+    }
+    .carousel-scrollbar {
+        visibility: hidden; /* Hace el scrollbar invisible */
+        pointer-events: none; /* Evita que el scrollbar interactúe con el usuario */
+    }
+
+    .scrollbar-thumb {
+        background-color: #333; /* Color básico */
+        box-shadow: none;
+    }
+  
+}
+
+/* Estilo para pantallas de móviles (480px a 785px) */
+@media (max-width: 785px) {
+    #inicio {
+        padding: 15px;
+    }
+
+    #inicio p {
+        font-size: 16px; /* Reduce el tamaño de la fuente en tabletas */
+        margin-bottom: 40px; /* Ajusta el margen inferior */
+    }
+    p{
+        margin: 0;
+        margin-bottom: 50px;
+        font-size: 16px;
+    }
+
+    .carousel {
+        max-height: 300px;
+    }
+
+    .carousel-indicators {
+        bottom: 5px;
+        right: 5px;
+    }
+
+    .sales-carousel-container {
+        padding: 0;
+    }
+
+    .sales-carousel-wrapper {
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+    }
+
+    .sales-item {
+        flex: 0 0 33.33%;
+        display: inline-block;
+        width: 33.33%;
+    }
+
+    .carousel-scrollbar {
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        height: 5px;
+        background-color: #ccc;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    .scrollbar-thumb {
+        height: 100%;
+        background-color: #333;
+        border-radius: 5px;
+        width: 33.33%;
+        transition: transform 0.3s ease;
+        position: relative;
+    }
+
+    .sales-carousel-prev,
+    .sales-carousel-next {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    #inicio {
+        padding: 15px;
+    }
+
+    #inicio p {
+        font-size: 16px; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+        margin-bottom: 40px; /* Ajusta el margen inferior */
+    }
+
+    p {
+        margin: 0;
+        margin-bottom: 50px;
+        font-size: 16px;
+    }
+
+    .sales-carousel-container {
+        padding: 0;
+    }
+
+    .sales-carousel-wrapper {
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+    }
+
+    .sales-item {
+        flex: 0 0 33.33%;
+        display: inline-block;
+        width: 33.33%;
+    }
+
+    .carousel-scrollbar {
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        height: 5px;
+        background-color: #ccc;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    .scrollbar-thumb {
+        height: 100%;
+        background-color: #333;
+        border-radius: 5px;
+        width: 33.33%;
+        transition: transform 0.3s ease;
+        position: relative;
+    }
+
+    .sales-carousel-prev,
+    .sales-carousel-next {
+        display: none;
+    }
+}
+/* Estilo del contenedor de preguntas frecuentes para pantallas pequeñas */
+@media (max-width: 768px) {
+    #faq {
+        padding: 20px 10px; /* Menos espaciado interno */
+        margin: 15px auto; /* Menos espacio arriba y abajo */
+    }
+
+    /* Estilo del encabezado de la sección */
+    #faq h2 {
+        font-size: 1.5em; /* Tamaño de fuente más pequeño */
+        margin-bottom: 20px; /* Menos espacio debajo del encabezado */
+    }
+
+    /* Estilo de las preguntas */
+    .faq-question {
+        font-size: 16px; /* Tamaño de fuente más pequeño */
+        padding: 15px; /* Menos espaciado interno */
+    }
+
+    /* Estilo de la respuesta */
+    .faq-answer {
+        font-size: 14px; /* Tamaño de fuente más pequeño */
+        padding: 15px; /* Menos espaciado interno */
+    }
+}
