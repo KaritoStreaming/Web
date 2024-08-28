@@ -1,0 +1,121 @@
+/* Estilos generales para el contenedor de precios */
+.pricing__container {
+    display: grid;
+    gap: 20px;
+    padding: 10px; /* Espacio interno de 10px alrededor del contenedor */
+    box-sizing: border-box;
+    margin: 0 auto; /* Sin margen automático para evitar el desbordamiento horizontal */
+    width: calc(100% - 20px); /* Ocupa todo el ancho disponible menos el padding */
+    max-width: 100vw; /* Evita el desbordamiento horizontal */
+}
+
+/* Estilos para las tarjetas */
+.card {
+    background: #141414; /* Fondo oscuro para las tarjetas */
+    color: #e5e5e5; /* Texto claro */
+    border-radius: 4px; /* Bordes redondeados menos pronunciados */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.7); /* Sombra pronunciada */
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s; /* Transiciones suaves */
+    position: relative;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Efecto de elevación al pasar el ratón */
+    box-shadow: 0 8px 30px rgba(0,0,0,0.8); /* Sombra más pronunciada */
+    background: #333; /* Fondo más claro al pasar el ratón */
+}
+
+.card h2 {
+    margin-bottom: 10px;
+    font-size: 1.6em; /* Tamaño de fuente más grande para el título */
+    font-weight: 700;
+}
+
+.card .price {
+    font-size: 1.5em; /* Tamaño de fuente más grande para el precio */
+    margin: 10px 0;
+    color: #e50914; /* Color destacado del precio */
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    font-size: 0.95em; /* Tamaño de fuente uniforme para las características */
+}
+
+.card ul li {
+    margin: 10px 0;
+    border-bottom: 1px solid #444; /* Línea separadora entre características */
+    padding-bottom: 10px;
+}
+
+.card ul li:last-child {
+    border-bottom: none; /* Elimina la línea en el último ítem */
+}
+
+.card button {
+    background: #e50914; /* Color del botón destacado */
+    border: none;
+    color: #fff;
+    padding: 8px 16px; /* Menor padding para hacer el botón menos ancho */
+    margin: 10px 0;
+    border-radius: 4px; /* Bordes redondeados menos pronunciados */
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s; /* Transiciones suaves */
+    font-size: 0.9em; /* Tamaño de fuente más pequeño para el botón */
+    font-weight: 700;
+}
+
+.card button:hover {
+    background: #d40812; /* Color del botón al pasar el ratón */
+    transform: scale(1.05); /* Efecto de aumento en el botón */
+}
+
+/* Diseño en dispositivos grandes (pantallas muy grandes) */
+@media (min-width: 1600px) {
+    .pricing__container {
+        grid-template-columns: repeat(4, 1fr); /* Cuatro columnas en pantallas muy grandes */
+        padding: 10px; /* Espacio interno de 10px alrededor del contenedor */
+        margin-top: 120px; /* Espacio adicional para evitar que el menú tape los planes */
+        margin-bottom: 60px; /* Espacio para el pie de página en pantallas grandes */
+    }
+}
+
+/* Diseño en dispositivos grandes (PC) */
+@media (min-width: 1200px) and (max-width: 1599px) {
+    .pricing__container {
+        grid-template-columns: repeat(4, 1fr); /* Cuatro columnas en pantallas grandes */
+        padding: 10px; /* Espacio interno de 10px alrededor del contenedor */
+        margin-top: 100px; /* Espacio adicional para evitar que el menú tape los planes */
+        margin-bottom: 50px; /* Espacio para el pie de página en pantallas grandes */
+    }
+}
+
+/* Diseño en dispositivos medianos */
+@media (min-width: 769px) and (max-width: 899px) {
+    .pricing__container {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas medianas */
+        padding: 10px; /* Espacio interno de 10px alrededor del contenedor */
+        margin-top: 70px; /* Espacio adicional para evitar que el menú tape los planes */
+        margin-bottom: 40px; /* Espacio para el pie de página en pantallas medianas */
+    }
+}
+
+/* Diseño en dispositivos móviles */
+@media (max-width: 768px) {
+    .pricing__container {
+        grid-template-columns: 1fr; /* Una columna en dispositivos móviles */
+        padding: 10px; /* Espacio interno de 10px alrededor del contenedor */
+        margin-top: 100px; /* Espacio adicional para evitar que el menú tape los planes en dispositivos móviles */
+        margin-bottom: 80px; /* Espacio para el pie de página en dispositivos móviles */
+    }
+
+    .card {
+        max-width: 100%; /* Asegura que las tarjetas ocupen todo el ancho del contenedor */
+        margin: 0 auto; /* Centra las tarjetas en el contenedor */
+        width: calc(100% - 20px); /* Ajusta el ancho para ocupar la mayor parte del espacio disponible */
+    }
+}

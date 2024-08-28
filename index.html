@@ -1,45 +1,51 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Karito Streaming</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="style-responsive.css">
+    <link rel="icon" href="icono2.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/0e4216b0b7.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <div class="background-blur"></div>
-        <div class="logo">
-            <svg width="auto" height="50" xmlns="http://www.w3.org/2000/svg">
-                <text x="0" y="40" font-family="sans-serif" font-size="30" font-weight="700" fill="white">Karito</text>
-                <text x="90" y="40" font-family="sans-serif" font-size="30" font-weight="700" fill="red">Streaming</text>
-            </svg>
-        </div>
-        <nav>
-            <ul class="nav-menu">
-                <li><a href="HOME.html">Inicio</a></li>
-                <li><a href="#acerca">Acerca de Nosotros</a></li>
-                <li class="dropdown">
-                    <a href="#compra">Servicios</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="streaming.html">Streaming</a></li>
-                        <li><a href="iptv.html">Iptv</a></li>
-                        <li><a href="musica.html">Musica</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-        <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
-        <button class="search-toggle" aria-label="Abrir búsqueda">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-        <div class="search-box" id="search-box">
-            <input type="text" id="search" placeholder="Buscar...">
-        </div>
-    </header>
-    
+   <nav class="nav">
+      <i class="uil uil-bars navOpenBtn"></i>
+     <a href="#" class="logo">
+        <img src="icono2.png" alt="Logo Icono" class="logo-icon">
+             Karito <span>Streaming</span>
+     </a>
+
+      <ul class="nav-links">
+    <i class="uil uil-times navCloseBtn"></i>
+    <li><a href="index.html">Inicio</a></li>
+    <li class="dropdown">
+        <a href="#" class="servicios-link">
+            Servicios
+            <i class="fas fa-chevron-down icono-pequeno"></i>
+        </a>
+        
+        
+        <ul class="dropdown-menu">
+            <li><a href="streaming.html">Streaming</a></li>
+            <li><a href="iptv.html">IPTV</a></li>
+            <li><a href="musica.html">Música</a></li>
+        </ul>
+    </li>
+    <li><a href="sobre nosotros.html">Acerca de Nosotros</a></li>
+</ul>
+
+
+      <i class="uil uil-search search-icon" id="searchIcon"></i>
+      <div class="search-box">
+        <i class="uil uil-search search-icon"></i>
+        <input type="text" placeholder="Buscas..." />
+      </div>
+    </nav>
     <main>
         <section id="inicio">
             <div class="carousel">
@@ -54,18 +60,19 @@
                     <span class="indicator" data-slide="2"></span>
                 </div>
             </div>
-
-            <p class="text-content">
+           <p class="text-content">
                 Karito Streaming ofrece plataformas de streaming de alta calidad, 
                 asegurando una excelente experiencia de visualización con seguridad 
                 y soporte confiable. Disfruta de contenidos con claridad y sin interrupciones,
-                respaldados por un equipo dedicado.
-                <span id="more-content" style="display: none;">
-                    Nuestras plataformas garantizan una transmisión fluida, excelente calidad 
-                    de imagen y sonido, y protección de tus datos. Además, siempre estamos aquí para ayudarte.
+                respaldados por un equipo dedicado.<span id="more-content" style="display: none;">Nuestras
+                plataformas garantizan una transmisión fluida, excelente calidad 
+                de imagen y sonido, y protección de tus datos. Además, siempre estamos
+                aquí para ayudarte.
                 </span>
                 <a href="#" id="show-more">Ver más</a>
             </p>
+
+
         </section>
         
         <section id="galeria">
@@ -84,13 +91,15 @@
                     <p>Spotify: Música sin límites con tu servicio de streaming favorito.</p>
                 </div>
                 <div class="gallery-item">
-                    <img src="youTube premium.jpg" alt="YouTube Premium">
+                    <img src="youtube premium.jpg" alt="YouTube Premium">
                     <p>YouTube Premium: Disfruta de contenido exclusivo sin anuncios.</p>
                 </div>
             </div>
         </section>
 
 <main>
+    <div class="titulo"><h3>Nuestros Productos</h3></div>
+    <div class="esapcio_h3"></div>
     <div class="sales-carousel-container">
         <button class="sales-carousel-prev">&#9664;</button>
         <div class="sales-carousel-wrapper">
@@ -139,7 +148,7 @@
                     <button class="sales-buy-button" data-title="Spotify" data-description="Principalmente una plataforma de streaming de música que ofrece millones de canciones, listas de reproducción y podcasts. Conocida por sus recomendaciones personalizadas y funciones como Spotify Wrapped." data-image="spotify.png">Adquiere</button>
                 </div>
                 <div class="sales-item">
-                    <img src="Iptv.png" alt="Iptv">
+                    <img src="iptv.png" alt="Iptv">
                     <div class="sales-item-title">
                         <h3>Iptv</h3>
                     </div>
@@ -184,41 +193,89 @@
         </div>
     </div>
 </section>
+        
+  <div class="wrapper">
+      <header>
+        <i class="bx bx-cookie"></i>
+        <h2>Permitir Cookies</h2>
+      </header>
 
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3><i class="fas fa-info-circle"></i> Nosotros</h3>
-                <p>Conoce más sobre nuestra empresa, nuestra misión y visión, y nuestro equipo de trabajo.</p>
-                <a href="#about-us" class="footer-link">Leer más</a>
-            </div>
-            <div class="footer-section">
-                <h3><i class="fas fa-store"></i> Tienda</h3>
-                <ul class="footer-list">
-                    <li><a href="#shop" class="footer-link"><i class="fas fa-box"></i> Nuestra Tienda</a></li>
-                    <li><a href="#products" class="footer-link"><i class="fas fa-tag"></i> Productos</a></li>
-                    <li><a href="#offers" class="footer-link"><i class="fas fa-percent"></i> Ofertas Especiales</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3><i class="fas fa-address-card"></i> Contacto</h3>
-                <p>Dirección: Calle Ejemplo 123, Ciudad, País</p>
-                <p>Teléfono: (123) 456-7890</p>
-                <p>Email: contacto@ejemplo.com</p>
-            </div>
-            <div class="footer-section">
-                <h3><i class="fas fa-share-alt"></i> Redes Sociales</h3>
-                <a href="https://facebook.com" target="_blank" class="footer-social-link"><i class="fab fa-facebook-f"></i> Facebook</a>
-                <a href="https://twitter.com" target="_blank" class="footer-social-link"><i class="fab fa-twitter"></i> Twitter</a>
-                <a href="https://instagram.com" target="_blank" class="footer-social-link"><i class="fab fa-instagram"></i> Instagram</a>
-                <a href="https://linkedin.com" target="_blank" class="footer-social-link"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-            </div>
+      <div class="data">
+        <p>Este sitio web utiliza cookies para ofrecerte 
+            una experiencia de navegación superior y más
+            relevante.</p>
+      </div>
+
+      <div class="buttons">
+        <button class="button" id="acceptBtn">Aceptar</button>
+        <button class="button" id="declineBtn">Rechazar</button>
+      </div>
+    </div>
+        
+  <footer class="footer">
+    <div class="footer-logo">
+        <a href="#" class="logo">
+            <img src="icono.svg" alt="Logo Icono" class="logo-icon">
+            Karito Streaming
+        </a>
+    </div>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Compañía</h3>
+            <ul class="footer-list">
+                <li><a href="sobre nosotros.html" class="footer-link">Nosotros</a></li>
+                <li><a href="servicios.html" class="footer-link">Servicios</a></li>
+                <li><a href="politica.html" class="footer-link">Política</a></li>
+                <li><a href="privacidad.html" class="footer-link">Privacidad</a></li>
+            </ul>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Tu Empresa. Todos los derechos reservados.</p>
+        <div class="footer-section">
+            <h3>Tienda</h3>
+            <ul class="footer-list">
+                <li><a href="streaming.html" class="footer-link">Streaming</a></li>
+                <li><a href="iptv.html" class="footer-link">IPTV</a></li>
+                <li><a href="musica.html" class="footer-link">Música</a></li>
+                <li><a href="otros.html" class="footer-link">Otros Servicios</a></li>
+            </ul>
         </div>
-    </footer>
+        <div class="footer-section">
+            <h3>Ayuda</h3>
+            <ul class="footer-list">
+                <li><a href="preguntas.html" class="footer-link">Preguntas</a></li>
+                <li><a href="compras.html" class="footer-link">Compras</a></li>
+                <li><a href="metodo-pago.html" class="footer-link">Método de Pago</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Siguenos</h3>
+            <div class="footer-social-icons">
+                  <a href="https://facebook.com" target="_blank" class="footer-social-link"><i class="fab fa-facebook-f"></i></a>
+                  <a href="https://twitter.com" target="_blank" class="footer-social-link"><i class="fa-brands fa-x-twitter"></i></a>
+                  <a href="https://instagram.com" target="_blank" class="footer-social-link"><i class="fab fa-instagram"></i></a>
+                  <a href="https://linkedin.com" target="_blank" class="footer-social-link"><i class="fab fa-whatsapp"></i></a>
+           </div>
+        </div>
+        </div>
+    </div>
+    <div class="footer-payment">
+        <div class="payment-icons">
+            <img src="m1.png" alt="Método de Pago 1">
+            <img src="m2.png" alt="Método de Pago 2">
+            <img src="m3.png" alt="Método de Pago 3">
+            <img src="m4.png" alt="Método de Pago 4">
+        </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Karito Streaming. Todos los derechos reservados.</p>
+    </div>
+</footer>
+<a href="https://wa.link/geu95i" class="whatsapp-button" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+
     <script src="carousel.js"></script>
     <script src="script.js"></script>
+    <script src="menu.js"></script>
+    <script src="cookies.js"></script>
 </body>
 </html>

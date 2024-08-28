@@ -55,7 +55,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (visibleItems < 5) visibleItems = 5; // Asegura que se vean al menos 5 ítems
     }
 
+    function toggleScrollbar() {
+        if (window.innerWidth >= 600) {
+            wrapper.style.overflowX = 'hidden'; // Oculta el scrollbar en pantallas grandes
+        } else {
+            wrapper.style.overflowX = 'scroll'; // Muestra el scrollbar en pantallas pequeñas
+        }
+    }
+
     updateVisibleItems(); // Actualiza al cargar la página
+    toggleScrollbar(); // Ajusta el scrollbar al cargar la página
 
     // Desplaza el carrusel en función del número de ítems visibles
     function scrollCarousel(offset) {
@@ -73,8 +82,9 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollCarousel(visibleItems); // Desplazarse hacia la derecha
     });
 
-    // Actualiza el número de ítems visibles al redimensionar la ventana
+    // Actualiza el número de ítems visibles y la visibilidad del scrollbar al redimensionar la ventana
     window.addEventListener('resize', function() {
         updateVisibleItems();
+        toggleScrollbar();
     });
 });

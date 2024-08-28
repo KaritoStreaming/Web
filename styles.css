@@ -29,153 +29,229 @@ body::before {
     z-index: -1;
 }
 
-/* Estilo del encabezado */
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    background-color: #000;
-    color: white;
-    position: relative;
-    z-index: 10;
-    width: 100%;
-    box-sizing: border-box;
+/* Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 200px;
+  background-color: #000; /* Fondo negro */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+  z-index: 1000;
 }
 
-/* Estilo del logo */
+
+.nav,
+.nav .nav-links {
+  display: flex;
+  align-items: center;
+}
+.nav {
+  justify-content: space-between;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
 .logo {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-    margin-right: 20px; /* Espacio entre el logo y el menú */
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* Elimina el subrayado del enlace */
+  color: white; /* Color para el texto 'Karito' */
+  font-family: sans-serif;
+  font-size: 30px;
+  font-weight: 700;
 }
 
-.logo svg {
-    height: 50px; /* Ajusta el tamaño del logo */
-    width: auto; /* Mantiene la proporción del logo */
-    max-width: 100%; /* Asegura que el logo no se desborde del contenedor */
+.logo-icon {
+  width: 1.4em; /* Ajusta el tamaño del ícono para que sea proporcional al texto */
+  height: 1.5em; /* Mantiene la proporción del ícono */
+  margin-right: 8px; /* Espacio entre el ícono y el texto */
+  vertical-align: middle; /* Alinea verticalmente el ícono con el texto */
 }
 
-/* Estilo de la navegación */
-nav {
-    flex: 1;
+.logo span {
+  color: red; /* Color para el texto 'Streaming' */
 }
 
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    text-align: center; /* Centra los elementos del menú */
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Centra horizontalmente los elementos del menú */
-    flex-wrap: wrap; /* Permite que el menú se ajuste en pantallas pequeñas */
+.nav .nav-links a {
+  transition: all 0.2s linear;
+}
+.nav.openSearch .nav-links a {
+  opacity: 0;
+  pointer-events: none;
+}
+/* Estilo base para los enlaces del menú */
+.nav .nav-links {
+    column-gap: 20px;
+  list-style: none; /* Elimina la numeración de los elementos de lista */
+  padding: 0; /* Elimina el padding predeterminado */
+  margin: 0; /* Elimina el margen predeterminado */
+  display: flex; /* Muestra los enlaces en fila */
 }
 
-nav ul li {
-    position: relative;
-    margin: 0 15px;
+.nav .nav-links a {
+  color: #fff; /* Color del texto del menú */
+  text-decoration: none; /* Elimina el subrayado del enlace */
+  position: relative; /* Necesario para posicionar el pseudo-elemento */
+  display: inline-block; /* Permite aplicar el padding y otros estilos */
+  padding-bottom: 5px; /* Espacio entre el texto y la raya */
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 10px;
-    display: block;
+/* Estilo para el pseudo-elemento que crea la raya */
+.nav .nav-links a::before {
+  content: ""; /* Necesario para mostrar el pseudo-elemento */
+  position: absolute;
+  bottom: 0; /* Posiciona la raya en la parte inferior del enlace */
+  left: 0;
+  width: 100%;
+  height: 2px; /* Altura de la raya */
+  background-color: #e50914; /* Color rojo para la raya */
+  transform: scaleX(0); /* Inicialmente oculta la raya */
+  transform-origin: bottom right; /* Expande la raya desde la derecha */
+  transition: transform 0.3s ease; /* Animación de la raya */
+}
+/* Animación cuando el ratón está sobre el enlace o cuando está enfocado */
+.nav .nav-links a:hover::before,
+.nav .nav-links a:focus::before {
+  transform: scaleX(1); /* Muestra la raya al pasar el ratón o al enfocar */
+  transform-origin: bottom left; /* Expande la raya desde la izquierda */
 }
 
-nav ul li a:hover,
-nav ul li a.active {
-    border-bottom: 2px solid red;
+/* Animación cuando el ratón está sobre el enlace o cuando está enfocado */
+.nav .nav-links a:hover::before,
+.nav .nav-links a:focus::before {
+  transform: scaleX(1); /* Muestra la raya al pasar el ratón o al enfocar */
+  transform-origin: bottom left; /* Expande la raya desde la izquierda */
 }
 
-/* Menú desplegable */
-.dropdown {
-    position: relative;
-}
-
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
+/* Estilo base para el menú desplegable */
 .dropdown-menu {
-    display: none;
+    display: none; /* Oculto por defecto */
     position: absolute;
-    top: 100%;
+    top: 100%; /* Despliega justo debajo del enlace padre */
     left: 0;
-    background-color: #333;
-    padding: 0;
-    list-style: none;
+    background-color: #222; /* Fondo oscuro elegante */
+    list-style: none; /* Elimina la numeración */
+    padding: 10px 0; /* Espaciado interno para los elementos */
     margin: 0;
-    z-index: 1;
+    min-width: 220px; /* Ancho mínimo para el dropdown */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Suave transición */
+    z-index: 999; /* Asegura que se muestre encima de otros elementos */
 }
 
 .dropdown-menu li {
-    margin: 0;
+    width: 100%; /* Asegura que los elementos del dropdown ocupen todo el ancho */
 }
 
-.dropdown-menu li a {
-    color: white;
-    text-decoration: none;
-    padding: 10px;
+.dropdown-menu a {
+    padding: 12px 20px;
+    color: #fff; /* Color del texto en el dropdown */
+    text-decoration: none; /* Elimina el subrayado */
     display: block;
+    font-size: 16px; /* Tamaño de texto más grande */
+    position: relative; /* Posición relativa para la línea inferior */
+    transition: color 0.3s ease; /* Suave transición en color */
 }
 
-.dropdown-menu li a:hover {
-    background-color: #555;
+.dropdown-menu a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #e50914; /* Línea roja */
+    transition: width 0.3s ease; /* Animación de la línea */
 }
-/* Estilo del contenedor de búsqueda para pantallas grandes */
-.search-container {
-    display: flex;
-    align-items: center;
+
+/* Mostrar el dropdown cuando se pase el ratón sobre el enlace padre */
+.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Efecto hover: Solo la línea inferior se pinta de rojo */
+.dropdown-menu a:hover::after {
+    width: 100%; /* Expande la línea al 100% en hover */
+}
+
+.dropdown-menu a:hover {
+    color: #fff; /* Mantiene el color del texto blanco */
+}
+
+/* Ajuste adicional para asegurar que el menú principal no se superponga al dropdown */
+.nav-links li {
     position: relative;
 }
 
-/* Icono del buscador */
-.search-toggle {
-    color: white;
-    font-size: 18px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    margin-left: 10px;
-    z-index: 10;
+
+.nav .search-icon {
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
 }
 
-/* Estilo del contenedor del campo de búsqueda para pantallas grandes */
-.search-box {
-    position: absolute;
-    top: calc(100% + 5px); /* Espacio hacia abajo */
-    right: 0; /* Alineado a la derecha */
-    width: 300px; /* Ancho más largo */
-    background-color: #000;
-    padding: 5px; /* Ajusta el padding */
-    border-radius: 0; /* Sin borde circular */
-    display: none;
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efecto visual */
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
-    z-index: 20; /* Asegura que esté sobre otros elementos */
+.nav .search-box {
+  position: absolute;
+  right: 250px;
+  height: 45px;
+  max-width: 555px;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s linear;
+  background-color: #000; /* Fondo negro para el contenedor del buscador */
+  border-radius: 6px; /* Bordes redondeados */
 }
 
-/* Estilo del campo de entrada dentro del contenedor de búsqueda */
+.nav.openSearch .search-box {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.search-box .search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  color: #e50914; /* Color rojo para el ícono de búsqueda */
+  transform: translateY(-50%);
+}
+
 .search-box input {
-    border: none;
-    border-radius: 0; /* Sin borde circular */
-    padding: 10px; /* Ajusta el padding */
-    width: 100%;
-    outline: none;
-    background-color: #000;
-    color: #fff;
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: #000; /* Fondo negro para el campo de entrada */
+  color: #fff; /* Texto en blanco */
+  padding: 0 15px 0 45px;
+  border-radius: 6px; /* Bordes redondeados */
 }
 
-/* Mostrar el contenedor de búsqueda al hacer hover sobre el ícono */
-.search-toggle:hover + .search-box {
-    display: block;
-    opacity: 1;
+
+.nav .navOpenBtn,
+.nav .navCloseBtn {
+  display: none;
+}
+
+main #inicio{
+  margin-top: 80px; /* Ajusta este valor según la altura de tu nav */
 }
 
 /* Estilo del carrusel de imágenes */
@@ -310,6 +386,12 @@ nav ul li a.active {
     font-size: 16px; /* Ajusta el tamaño del texto */
     text-align: center; /* Centra el texto debajo de la imagen */
 }
+.titulo{
+    text-align: center;
+    font-family: arial;
+    font-size: 20px;
+    color: #fff;
+}
 .sales-carousel-container {
     position: relative;
     width: 100%;
@@ -342,10 +424,11 @@ nav ul li a.active {
 }
 
 .sales-item img {
-    width: 100%;
-    max-height: 200px;
+    width: 80%;
+    max-height: 400px;
     object-fit: cover;
     border-radius: 10px;
+    object-fit: cover;
 }
 
 .sales-item-title {
@@ -362,6 +445,9 @@ h3 {
 h3.space-adjustment {
     margin: 10px 0; /* Ajusta el margen superior e inferior como desees */
     padding: 0 5px; /* Ajusta el padding si necesitas más espacio dentro del h3 */
+}
+.esapcio_h3{
+    padding: 5px;
 }
 
 .sales-buy-button {
@@ -398,11 +484,12 @@ h3.space-adjustment {
     font-size: 20px; /* Tamaño del ícono */
     cursor: pointer;
     position: absolute;
-    top: 50%;
+    top: calc(50% - 50px); /* Mueve el botón 5px más arriba */
     transform: translateY(-50%);
     z-index: 10;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 
 .sales-carousel-prev {
     left: 10px; /* Espacio desde el borde izquierdo */
@@ -430,7 +517,7 @@ h3.space-adjustment {
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 99999;
     left: 0;
     top: 0;
     width: 100%;
@@ -503,58 +590,143 @@ h3.space-adjustment {
 
 /* Estilo del contenedor de preguntas frecuentes */
 #faq {
-    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
-    padding: 40px 20px;
-    margin: 20px auto; /* Centra la sección en la página */
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro más opaco */
+    padding: 60px 40px; /* Mayor espaciado interno */
+    margin: 30px auto; /* Espacio adicional arriba y abajo */
     max-width: 1200px; /* Ancho máximo de la sección */
     box-sizing: border-box;
+    border-radius: 0px; /* Bordes ligeramente redondeados */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Sombra más pronunciada */
 }
 
 /* Estilo del encabezado de la sección */
 #faq h2 {
     color: white;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px; /* Espacio adicional debajo del encabezado */
+    font-size: 2.5em; /* Tamaño más grande para el encabezado */
+    font-weight: 300; /* Fuente más ligera para un aspecto moderno */
 }
 
 /* Estilo de los elementos de preguntas frecuentes */
 .faq-item {
-    margin-bottom: 20px;
+    margin-bottom: 30px; /* Espacio adicional entre cada pregunta */
 }
 
 /* Estilo de las preguntas */
 .faq-question {
     color: #fff;
-    font-size: 18px;
+    font-size: 22px; /* Tamaño de fuente mayor */
     cursor: pointer;
-    padding: 10px;
-    border: 1px solid #fff;
-    border-radius: 5px;
+    padding: 15px;
+    border-radius: 4px; /* Bordes más redondeados */
     margin: 0;
-    background: #000;
-    transition: background 0.3s, color 0.3s;
+    background: #000; /* Fondo más oscuro */
+    border: 1px solid #fff;
+    transition: background 0.3s, color 0.3s, transform 0.3s; /* Transiciones suaves */
 }
 
 /* Estilo de la respuesta */
 .faq-answer {
     color: #ddd;
-    font-size: 16px;
-    padding: 10px;
+    font-size: 18px; /* Tamaño de fuente mayor */
+    padding: 15px;
     border-top: 1px solid #555;
     display: none; /* Oculta la respuesta por defecto */
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out; /* Transiciones suaves */
+    max-height: 500px; /* Altura máxima para la animación */
+    opacity: 0; /* Inicialmente invisible */
 }
 
 /* Cambia el color del encabezado al pasar el ratón */
 .faq-question:hover {
-    background: #555;
+    background: #333; /* Fondo ligeramente más claro en hover */
     color: #fff;
+    transform: scale(1.02); /* Escala ligeramente el elemento */
 }
 
 /* Mostrar la respuesta al hacer clic en la pregunta */
 .faq-item.active .faq-answer {
     display: block;
+    opacity: 1; /* Muestra la respuesta */
 }
 
+.wrapper {
+    z-index: 9999;
+  position: fixed;
+  bottom: 50px;
+  right: -370px;
+  max-width: 345px;
+  width: 100%;
+  background: #000 ;
+  border-radius: 20px;
+  padding: 15px 25px 22px;
+  transition: right 0.3s ease;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.9);
+}
+.wrapper.show {
+  right: 20px;
+}
+.wrapper header {
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+}
+header i {
+  color: #FF0000;
+  font-size: 32px;
+}
+header h2 {
+  color: #fff;
+  font-weight: 500;
+}
+.wrapper .data {
+  margin-top: 16px;
+}
+.wrapper .data p {
+  color: #D3D3D3;
+  font-size: 16px;
+}
+.data p a {
+  color: #4070f4;
+  text-decoration: none;
+}
+.data p a:hover {
+  text-decoration: underline;
+}
+.wrapper .buttons {
+  margin-top: 16px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.buttons .button {
+  border: none;
+  color: #fff;
+  padding: 8px 0;
+  border-radius: 0px;
+  background: #FF0000;
+  cursor: pointer;
+  width: calc(100% / 2 - 10px);
+  transition: all 0.2s ease;
+}
+.buttons #acceptBtn:hover {
+  background-color: #000;
+    color:#FF0000;
+    
+}
+#declineBtn {
+  border: 2px solid #FF0000;
+  background-color: #000;
+  color: #FF0000;
+}
+#declineBtn:hover {
+  background-color: #FF0000;
+  color: #fff;
+}
+
+/* General Footer Styles */
 .footer {
     background-color: #000; /* Fondo negro */
     color: #fff; /* Texto blanco */
@@ -562,17 +734,42 @@ h3.space-adjustment {
     font-family: Arial, sans-serif;
 }
 
+/* Logo Section */
+.footer-logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footer-logo .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-logo .logo-icon {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+    filter: invert(100%); /* Logo blanco */
+}
+
+/* Footer Container */
 .footer-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
+    justify-content: space-between;
 }
 
+/* Footer Sections */
 .footer-section {
     flex: 1 1 200px;
     margin: 10px;
+    min-width: 200px; /* Ajustado para mejor ajuste horizontal */
 }
 
 .footer-section h3 {
@@ -580,20 +777,17 @@ h3.space-adjustment {
     padding-bottom: 10px;
     margin-bottom: 20px;
     font-size: 1.2em;
-    display: flex;
-    align-items: center;
-}
-
-.footer-section h3 i {
-    margin-right: 10px;
+    font-weight: 300; /* Fuente fina */
 }
 
 .footer-section p,
 .footer-section ul {
     margin: 0;
     padding: 0;
+    font-weight: 300;
 }
 
+/* Footer Links */
 .footer-list {
     list-style-type: none;
     padding: 0;
@@ -603,49 +797,139 @@ h3.space-adjustment {
     margin-bottom: 10px;
 }
 
-.footer-link {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s;
-    display: flex;
-    align-items: center;
-}
-
-.footer-link i {
-    margin-right: 10px;
-}
-
-.footer-link:hover {
-    color: #26e07f;
-}
-
+.footer-link,
 .footer-social-link {
-    display: block;
     color: #fff;
     text-decoration: none;
-    margin-bottom: 10px;
     transition: color 0.3s;
     display: flex;
     align-items: center;
+    font-size: 0.9em; /* Fuente fina */
 }
 
+.footer-link i,
 .footer-social-link i {
     margin-right: 10px;
 }
 
+.footer-link:hover,
 .footer-social-link:hover {
-    color: #26e07f;
+    color: #e50914; /* Efecto hover rojo */
 }
 
+/* Footer Bottom Section */
 .footer-bottom {
     text-align: center;
-    padding: 10px 20px;
+    padding: 20px 10px; /* Ajuste de padding para reducir espacio en los bordes */
     border-top: 1px solid #444;
+    margin-top: 20px;
 }
 
-.footer-bottom p {
+/* Contenedor de íconos de pago */
+.payment-icons-container {
+    display: flex;
+    justify-content: center; /* Centra el contenedor de íconos horizontalmente */
+    align-items: center; /* Alinea verticalmente el contenedor de íconos */
+    margin-top: 20px; /* Espacio adicional antes de los íconos de pago */
+    width: 100%; /* Asegura que el contenedor ocupe el ancho completo disponible */
+    min-width: 200px;
+}
+
+/* Contenedor interno de los íconos */
+.payment-icons {
+    display: flex;
+    justify-content: center; /* Centra los íconos horizontalmente dentro del contenedor */
+    align-items: center; /* Alinea verticalmente los íconos */
+    gap: 10px; /* Espacio entre los íconos */
+    padding: 20px 0; /* Espacio arriba y abajo de los íconos */
+    max-width: 100%; /* Asegura que no se desborde del contenedor */
+    margin: 0; /* Alinea el contenedor interno horizontalmente */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+/* Estilo para los íconos de pago */
+.payment-icons img {
+    width: 50px; /* Tamaño ajustado para íconos de tarjeta */
+    height: auto; /* Mantiene la proporción de las imágenes */
+    transition: transform 0.3s, opacity 0.3s; /* Transiciones suaves para hover */
+    opacity: 0.9; /* Opacidad ligeramente reducida */
+    border-radius: 2px;
+}
+
+.payment-icons img:hover {
+    transform: scale(1.1); /* Aumenta el tamaño del ícono en el hover */
+    opacity: 1; /* Restaura la opacidad en hover */
+}
+
+
+/* Social Media Icons */
+.footer-social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Aumentar el espacio entre íconos */
+    margin-top: 20px; /* Ajustar el margen superior si es necesario */
+}
+
+.footer-social-icons a {
+    color: #fff;
+    font-size: 24px; /* Aumentar el tamaño de los íconos */
+    transition: color 0.3s;
+}
+
+.footer-social-icons a:hover {
+    color: #e50914; /* Color de hover para íconos de redes sociales */
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366; /* Color verde de WhatsApp */
+    color: white;
+    border: none;
+    border-radius: 50%; /* Asegura que el botón sea circular */
+    width: 60px; /* Ajusta el ancho del botón */
+    height: 60px; /* Ajusta la altura del botón */
+    padding: 0; /* Elimina el padding para mantener la forma circular */
+    font-size: 24px;
+    display: flex;
+    align-items: center; /* Centra el ícono verticalmente */
+    justify-content: center; /* Centra el ícono horizontalmente */
+    cursor: pointer;
+    z-index: 1000; /* Asegura que el botón esté sobre otros elementos */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Añade una sombra para destacar el botón */
+    animation: shake 0.5s ease-in-out infinite; /* Aplica la animación de timbre */
+}
+
+.whatsapp-button i {
     margin: 0;
+    line-height: 1; /* Ajusta la altura de línea para centrar el ícono */
+}
+
+.whatsapp-button:hover {
+    background-color: #128C7E; /* Color verde oscuro al pasar el mouse */
 }
 
 
+.servicios-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 16px; /* Tamaño de la fuente para el texto */
+}
+
+.icono-pequeno {
+    margin-left: 3px; /* Espacio entre el texto y el ícono */
+    font-size: 12px; /* Tamaño del ícono, ajusta según sea necesario */
+    vertical-align: middle; /* Alinea verticalmente el ícono con el texto */
+}
 
