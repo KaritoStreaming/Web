@@ -1,0 +1,360 @@
+/* Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 200px;
+  background-color: #000; /* Fondo negro */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+  z-index: 1000;
+}
+
+
+.nav,
+.nav .nav-links {
+  display: flex;
+  align-items: center;
+}
+.nav {
+  justify-content: space-between;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* Elimina el subrayado del enlace */
+  color: white; /* Color para el texto 'Karito' */
+  font-family: sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.logo-icon {
+  width: 1.4em; /* Ajusta el tamaño del ícono para que sea proporcional al texto */
+  height: 1.5em; /* Mantiene la proporción del ícono */
+  margin-right: 8px; /* Espacio entre el ícono y el texto */
+  vertical-align: middle; /* Alinea verticalmente el ícono con el texto */
+}
+
+.logo span {
+  color: red; /* Color para el texto 'Streaming' */
+}
+
+.nav .nav-links a {
+  transition: all 0.2s linear;
+}
+.nav.openSearch .nav-links a {
+  opacity: 0;
+  pointer-events: none;
+}
+/* Estilo base para los enlaces del menú */
+.nav .nav-links {
+    column-gap: 20px;
+  list-style: none; /* Elimina la numeración de los elementos de lista */
+  padding: 0; /* Elimina el padding predeterminado */
+  margin: 0; /* Elimina el margen predeterminado */
+  display: flex; /* Muestra los enlaces en fila */
+}
+
+.nav .nav-links a {
+  color: #fff; /* Color del texto del menú */
+  text-decoration: none; /* Elimina el subrayado del enlace */
+  position: relative; /* Necesario para posicionar el pseudo-elemento */
+  display: inline-block; /* Permite aplicar el padding y otros estilos */
+  padding-bottom: 5px; /* Espacio entre el texto y la raya */
+}
+
+/* Estilo para el pseudo-elemento que crea la raya */
+.nav .nav-links a::before {
+  content: ""; /* Necesario para mostrar el pseudo-elemento */
+  position: absolute;
+  bottom: 0; /* Posiciona la raya en la parte inferior del enlace */
+  left: 0;
+  width: 100%;
+  height: 2px; /* Altura de la raya */
+  background-color: #e50914; /* Color rojo para la raya */
+  transform: scaleX(0); /* Inicialmente oculta la raya */
+  transform-origin: bottom right; /* Expande la raya desde la derecha */
+  transition: transform 0.3s ease; /* Animación de la raya */
+}
+/* Animación cuando el ratón está sobre el enlace o cuando está enfocado */
+.nav .nav-links a:hover::before,
+.nav .nav-links a:focus::before {
+  transform: scaleX(1); /* Muestra la raya al pasar el ratón o al enfocar */
+  transform-origin: bottom left; /* Expande la raya desde la izquierda */
+}
+
+/* Animación cuando el ratón está sobre el enlace o cuando está enfocado */
+.nav .nav-links a:hover::before,
+.nav .nav-links a:focus::before {
+  transform: scaleX(1); /* Muestra la raya al pasar el ratón o al enfocar */
+  transform-origin: bottom left; /* Expande la raya desde la izquierda */
+}
+
+/* Estilo base para el menú desplegable */
+.dropdown-menu {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    top: 100%; /* Despliega justo debajo del enlace padre */
+    left: 0;
+    background-color: #222; /* Fondo oscuro elegante */
+    list-style: none; /* Elimina la numeración */
+    padding: 10px 0; /* Espaciado interno para los elementos */
+    margin: 0;
+    min-width: 220px; /* Ancho mínimo para el dropdown */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Suave transición */
+    z-index: 999; /* Asegura que se muestre encima de otros elementos */
+}
+
+.dropdown-menu li {
+    width: 100%; /* Asegura que los elementos del dropdown ocupen todo el ancho */
+}
+
+.dropdown-menu a {
+    padding: 12px 20px;
+    color: #fff; /* Color del texto en el dropdown */
+    text-decoration: none; /* Elimina el subrayado */
+    display: block;
+    font-size: 16px; /* Tamaño de texto más grande */
+    position: relative; /* Posición relativa para la línea inferior */
+    transition: color 0.3s ease; /* Suave transición en color */
+}
+
+.dropdown-menu a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #e50914; /* Línea roja */
+    transition: width 0.3s ease; /* Animación de la línea */
+}
+
+/* Mostrar el dropdown cuando se pase el ratón sobre el enlace padre */
+.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Efecto hover: Solo la línea inferior se pinta de rojo */
+.dropdown-menu a:hover::after {
+    width: 100%; /* Expande la línea al 100% en hover */
+}
+
+.dropdown-menu a:hover {
+    color: #fff; /* Mantiene el color del texto blanco */
+}
+
+/* Ajuste adicional para asegurar que el menú principal no se superponga al dropdown */
+.nav-links li {
+    position: relative;
+}
+
+
+.nav .search-icon {
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.nav .search-box {
+  position: absolute;
+  right: 250px;
+  height: 45px;
+  max-width: 555px;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s linear;
+  background-color: #000; /* Fondo negro para el contenedor del buscador */
+  border-radius: 6px; /* Bordes redondeados */
+}
+
+.nav.openSearch .search-box {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.search-box .search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  color: #e50914; /* Color rojo para el ícono de búsqueda */
+  transform: translateY(-50%);
+}
+
+.search-box input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: #000; /* Fondo negro para el campo de entrada */
+  color: #fff; /* Texto en blanco */
+  padding: 0 15px 0 45px;
+  border-radius: 6px; /* Bordes redondeados */
+}
+
+
+.nav .navOpenBtn,
+.nav .navCloseBtn {
+  display: none;
+}
+/* responsive */
+@media screen and (max-width: 1160px) {
+  .nav {
+    padding: 15px 100px;
+  }
+  .nav .search-box {
+    right: 150px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .logo {
+  font-size: 27px;
+}
+  .nav {
+    padding: 15px 50px;
+  }
+  .nav .search-box {
+    right: 100px;
+    max-width: 400px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .logo {
+  font-size: 25px;
+}
+  .nav .navOpenBtn,
+  .nav .navCloseBtn {
+    display: block;
+  }
+  .nav {
+    padding: 15px 20px;
+  }
+  .nav .nav-links {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    max-width: 280px;
+    width: 100%;
+    padding-top: 100px;
+    row-gap: 30px;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semitransparente */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    transition: all 0.4s ease;
+    z-index: 100;
+  }
+  .nav.openNav .nav-links {
+    left: 0;
+  }
+  .nav .navOpenBtn {
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .nav .navCloseBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .nav .search-box {
+    top: calc(100% + 10px);
+    max-width: calc(100% - 20px);
+    right: 50%;
+    transform: translateX(50%);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+}
+
+/* Para pantallas pequeñas y móviles (480px a 785px) */
+@media (max-width: 785px) {
+    /* Estilo base para el menú desplegable */
+    .dropdown-menu {
+        display: none; /* Oculto por defecto */
+        position: static; /* Cambiado de absolute a static */
+        top: auto; /* Eliminado top */
+        left: auto; /* Eliminado left */
+        background-color: transparent; /* Eliminado fondo */
+        list-style: none; /* Elimina la numeración */
+        padding: 0; /* Eliminado espaciado interno */
+        margin: 15px 0 0 0; /* Espacio entre el nav-link y el dropdown */
+        min-width: 0; /* Ancho mínimo eliminado */
+        border-radius: 0; /* Eliminado bordes redondeados */
+        box-shadow: none; /* Eliminada la sombra */
+        opacity: 0; /* Oculta el contenido */
+        visibility: hidden; /* Hace que el contenido no sea visible */
+        transition: none; /* Sin transición */
+        z-index: auto; /* Eliminado z-index */
+    }
+    
+    .dropdown-menu li {
+        width: auto; /* Ancho automático */
+        margin-bottom: 10px; /* Espacio entre las opciones */
+    }
+    
+    /* Eliminar el margen para el último elemento */
+    .dropdown-menu li:last-child {
+        margin-bottom: 0;
+    }
+    
+    .dropdown-menu a {
+        padding: 0; /* Eliminado padding */
+        color: #fff; /* Color del texto en el dropdown */
+        text-decoration: none; /* Elimina el subrayado */
+        display: block;
+        font-size: 16px; /* Tamaño de texto más grande */
+        position: static; /* Eliminado posición relativa */
+        transition: none; /* Sin transición en color */
+    }
+    
+    .dropdown-menu a::after {
+        content: '';
+        position: static; /* Cambiado de absolute a static */
+        width: 0; /* Sin línea inferior */
+        height: 0; /* Sin altura */
+        background-color: transparent; /* Sin color de fondo */
+        transition: none; /* Sin transición */
+    }
+    
+    /* Mostrar el dropdown cuando se haga clic en el enlace padre */
+    .dropdown.active .dropdown-menu {
+        display: block; /* Muestra el dropdown */
+        opacity: 1; /* Hace visible el contenido */
+        visibility: visible; /* Asegura que el contenido sea visible */
+    }
+    
+    /* Efecto hover: Solo la línea inferior se pinta de rojo */
+    .dropdown-menu a:hover::after {
+        width: 0; /* Sin expansión de la línea */
+    }
+    
+    .dropdown-menu a:hover {
+        color: #fff; /* Mantiene el color del texto blanco */
+    }
+  
+}

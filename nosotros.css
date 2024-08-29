@@ -1,6 +1,6 @@
 /* Estilo del contenedor principal */
 .main-container {
-    background-color: #1c1c1c; /* Fondo gris oscuro */
+    background-color: #111; /* Fondo gris oscuro */
     color: #fff; /* Color de texto blanco para contraste */
     min-height: 100vh;
     padding: 0 20px;
@@ -9,7 +9,7 @@
 
 /* Contenedor de superposición para asegurar el fondo oscuro */
 .overlay {
-    background: rgba(28, 28, 28, 0.9); /* Fondo gris oscuro con opacidad para un efecto de superposición */
+    background-color: #111;
     padding: 60px 20px;
     box-sizing: border-box;
     position: relative;
@@ -95,7 +95,7 @@
 }
 
 .team-member {
-    background-color: #2c2c2c; /* Fondo gris oscuro para las tarjetas del equipo */
+    background-color: #1c1c1c; /* Fondo gris oscuro para las tarjetas del equipo */
     color: #fff;
     border-radius: 10px;
     width: 280px;

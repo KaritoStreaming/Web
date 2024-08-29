@@ -1,0 +1,212 @@
+body {
+    background-color: #2c2c2c; /* Fondo oscuro pero más claro */
+    color: #ffffff; /* Letras en blanco */
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    color: #ffffff; /* Encabezados en blanco */
+}
+
+p {
+    color: #d3d3d3; /* Texto de los párrafos en un tono gris claro para mayor contraste */
+    margin-bottom: 20px;
+}
+
+.main-container {
+    padding: 20px;
+    margin-top: 80px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #2c2c2c; /* Mismo fondo oscuro pero claro */
+    border-radius: 8px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    margin-top: 25px;
+}
+
+p {
+    font-size: 1.1em;
+}
+
+/* General Footer Styles */
+.footer {
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+/* Logo Section */
+.footer-logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footer-logo .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-logo .logo-icon {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+    filter: invert(100%); /* Logo blanco */
+}
+
+/* Footer Container */
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+/* Footer Sections */
+.footer-section {
+    flex: 1 1 200px;
+    margin: 10px;
+    min-width: 200px; /* Ajustado para mejor ajuste horizontal */
+}
+
+.footer-section h3 {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    font-weight: 300; /* Fuente fina */
+}
+
+.footer-section p,
+.footer-section ul {
+    margin: 0;
+    padding: 0;
+    font-weight: 300;
+}
+
+/* Footer Links */
+.footer-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-list li {
+    margin-bottom: 10px;
+}
+
+.footer-link,
+.footer-social-link {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    font-size: 0.9em; /* Fuente fina */
+}
+
+.footer-link i,
+.footer-social-link i {
+    margin-right: 10px;
+}
+
+.footer-link:hover,
+.footer-social-link:hover {
+    color: #e50914; /* Efecto hover rojo */
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+    text-align: center;
+    padding: 20px 10px; /* Ajuste de padding para reducir espacio en los bordes */
+    border-top: 1px solid #444;
+    margin-top: 20px;
+}
+
+/* Contenedor de íconos de pago */
+.payment-icons-container {
+    display: flex;
+    justify-content: center; /* Centra el contenedor de íconos horizontalmente */
+    align-items: center; /* Alinea verticalmente el contenedor de íconos */
+    margin-top: 20px; /* Espacio adicional antes de los íconos de pago */
+    width: 100%; /* Asegura que el contenedor ocupe el ancho completo disponible */
+    min-width: 200px;
+}
+
+/* Contenedor interno de los íconos */
+.payment-icons {
+    display: flex;
+    justify-content: center; /* Centra los íconos horizontalmente dentro del contenedor */
+    align-items: center; /* Alinea verticalmente los íconos */
+    gap: 10px; /* Espacio entre los íconos */
+    padding: 20px 0; /* Espacio arriba y abajo de los íconos */
+    max-width: 100%; /* Asegura que no se desborde del contenedor */
+    margin: 0; /* Alinea el contenedor interno horizontalmente */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+/* Estilo para los íconos de pago */
+.payment-icons img {
+    width: 50px; /* Tamaño ajustado para íconos de tarjeta */
+    height: auto; /* Mantiene la proporción de las imágenes */
+    transition: transform 0.3s, opacity 0.3s; /* Transiciones suaves para hover */
+    opacity: 0.9; /* Opacidad ligeramente reducida */
+    border-radius: 2px;
+}
+
+.payment-icons img:hover {
+    transform: scale(1.1); /* Aumenta el tamaño del ícono en el hover */
+    opacity: 1; /* Restaura la opacidad en hover */
+}
+
+/* Social Media Icons */
+.footer-social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Aumentar el espacio entre íconos */
+    margin-top: 20px; /* Ajustar el margen superior si es necesario */
+}
+
+.footer-social-icons a {
+    color: #fff;
+    font-size: 24px; /* Aumentar el tamaño de los íconos */
+    transition: color 0.3s;
+}
+
+.footer-social-icons a:hover {
+    color: #e50914; /* Color de hover para íconos de redes sociales */
+}
+
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+    p {
+        font-size: 1em;
+    }
+    .main-container {
+        padding: 15px;
+    }
+}

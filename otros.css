@@ -1,0 +1,396 @@
+/* Estilo general del cuerpo */
+body {
+    font-family: "Poppins", sans-serif; /* Fuente Google Poppins */
+    color: #fff;
+    background-color: #111; /* Fondo negro */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
+}
+
+/* Contenedor principal para cubrir el body */
+.full-container {
+    width: 100%;
+    min-height: 100vh; /* Asegura que cubra toda la altura de la vista */
+    background-color: #111; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    padding: 80px 20px 20px; /* Espacio adicional para margen superior con menú fijo */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido horizontalmente */
+}
+
+/* Contenedor de contenido principal */
+.main-container {
+    max-width: 1200px;
+    width: 100%; /* Asegura que el contenedor se ajuste al ancho disponible */
+    padding: 20px;
+    background-color: #222; /* Fondo ligeramente más claro para el contenido */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.9); /* Sombra más prominente */
+    margin: 0 auto; /* Centra el contenedor */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Encabezado principal */
+h1 {
+    color: #e50914; /* Rojo de Netflix */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Tabla de contenidos */
+.table-of-contents {
+    background-color: #1c1c1c; /* Fondo gris oscuro */
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    align-items: flex-start;
+    display: none; /* Oculta por defecto en pantallas pequeñas */
+}
+
+.table-of-contents h2 {
+    color: #fff; /* Títulos en blanco */
+    margin: 0 0 15px;
+    font-size: 1.5em; /* Tamaño de fuente aumentado para mejor visibilidad */
+}
+
+.table-of-contents ul {
+   padding: 0;
+    list-style: none;
+}
+
+.table-of-contents li {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #666; /* Línea divisoria sutil */
+    padding-bottom: 5px;
+    list-style: none;
+}
+
+.table-of-contents a {
+    color: #e50914;
+    text-decoration: none;
+    font-size: 1.1em; /* Tamaño de fuente aumentado para mejor visibilidad */
+    list-style: none;
+}
+
+.table-of-contents a:hover {
+    text-decoration: underline;
+}
+
+/* Secciones */
+.section {
+    margin-bottom: 50px; /* Espacio adicional entre secciones */
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.section h2 {
+    color: #fff; /* Rojo de Netflix */
+    border-bottom: 2px solid #e50914;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.section p {
+    line-height: 1.8; /* Aumenta la altura de línea para mejor lectura */
+    margin-bottom: 20px;
+}
+
+/* Valoración */
+.rating {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra la valoración horizontalmente */
+    margin-top: 20px;
+}
+
+.rating p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.2em; /* Tamaño de fuente más grande */
+}
+
+.rating span {
+    color: #e50914;
+    font-size: 1.7em; /* Tamaño de fuente más grande */
+}
+
+/* Links */
+a {
+    color: #e50914; /* Rojo de Netflix */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* General Footer Styles */
+.footer {
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+/* Logo Section */
+.footer-logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footer-logo .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-logo .logo-icon {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+    filter: invert(100%); /* Logo blanco */
+}
+
+/* Footer Container */
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+/* Footer Sections */
+.footer-section {
+    flex: 1 1 200px;
+    margin: 10px;
+    min-width: 200px; /* Ajustado para mejor ajuste horizontal */
+}
+
+.footer-section h3 {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    font-weight: 300; /* Fuente fina */
+}
+
+.footer-section p,
+.footer-section ul {
+    margin: 0;
+    padding: 0;
+    font-weight: 300;
+}
+
+/* Footer Links */
+.footer-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-list li {
+    margin-bottom: 10px;
+}
+
+.footer-link,
+.footer-social-link {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    font-size: 0.9em; /* Fuente fina */
+}
+
+.footer-link i,
+.footer-social-link i {
+    margin-right: 10px;
+}
+
+.footer-link:hover,
+.footer-social-link:hover {
+    color: #e50914; /* Efecto hover rojo */
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+    text-align: center;
+    padding: 20px 10px; /* Ajuste de padding para reducir espacio en los bordes */
+    border-top: 1px solid #444;
+    margin-top: 20px;
+}
+
+/* Contenedor de íconos de pago */
+.payment-icons-container {
+    display: flex;
+    justify-content: center; /* Centra el contenedor de íconos horizontalmente */
+    align-items: center; /* Alinea verticalmente el contenedor de íconos */
+    margin-top: 20px; /* Espacio adicional antes de los íconos de pago */
+    width: 100%; /* Asegura que el contenedor ocupe el ancho completo disponible */
+    min-width: 200px;
+}
+
+/* Contenedor interno de los íconos */
+.payment-icons {
+    display: flex;
+    justify-content: center; /* Centra los íconos horizontalmente dentro del contenedor */
+    align-items: center; /* Alinea verticalmente los íconos */
+    gap: 10px; /* Espacio entre los íconos */
+    padding: 20px 0; /* Espacio arriba y abajo de los íconos */
+    max-width: 100%; /* Asegura que no se desborde del contenedor */
+    margin: 0; /* Alinea el contenedor interno horizontalmente */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+/* Estilo para los íconos de pago */
+.payment-icons img {
+    width: 50px; /* Tamaño ajustado para íconos de tarjeta */
+    height: auto; /* Mantiene la proporción de las imágenes */
+    transition: transform 0.3s, opacity 0.3s; /* Transiciones suaves para hover */
+    opacity: 0.9; /* Opacidad ligeramente reducida */
+    border-radius: 2px;
+}
+
+.payment-icons img:hover {
+    transform: scale(1.1); /* Aumenta el tamaño del ícono en el hover */
+    opacity: 1; /* Restaura la opacidad en hover */
+}
+
+/* Social Media Icons */
+.footer-social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Aumentar el espacio entre íconos */
+    margin-top: 20px; /* Ajustar el margen superior si es necesario */
+}
+
+.footer-social-icons a {
+    color: #fff;
+    font-size: 24px; /* Aumentar el tamaño de los íconos */
+    transition: color 0.3s;
+}
+
+.footer-social-icons a:hover {
+    color: #e50914; /* Color de hover para íconos de redes sociales */
+}
+
+/* Imágenes */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Estilo del contenedor de preguntas frecuentes */
+#faq {
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro más opaco */
+    padding: 60px 40px; /* Mayor espaciado interno */
+    margin: 30px auto; /* Espacio adicional arriba y abajo */
+    max-width: 1200px; /* Ancho máximo de la sección */
+    box-sizing: border-box;
+    border-radius: 0px; /* Bordes ligeramente redondeados */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Sombra más pronunciada */
+}
+
+/* Estilo del encabezado de la sección */
+#faq h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px; /* Espacio adicional debajo del encabezado */
+    font-size: 2.5em; /* Tamaño más grande para el encabezado */
+    font-weight: 300; /* Fuente más ligera para un aspecto moderno */
+}
+
+/* Estilo de los elementos de preguntas frecuentes */
+.faq-item {
+    margin-bottom: 30px; /* Espacio adicional entre cada pregunta */
+}
+
+/* Estilo de las preguntas */
+.faq-question {
+    color: #fff;
+    font-size: 22px; /* Tamaño de fuente mayor */
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px; /* Bordes más redondeados */
+    margin: 0;
+    background: #000; /* Fondo más oscuro */
+    border: 1px solid #fff;
+    transition: background 0.3s, color 0.3s, transform 0.3s; /* Transiciones suaves */
+}
+
+/* Estilo de la respuesta */
+.faq-answer {
+    color: #ddd;
+    font-size: 18px; /* Tamaño de fuente mayor */
+    padding: 15px;
+    border-top: 1px solid #555;
+    display: none; /* Oculta la respuesta por defecto */
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out; /* Transiciones suaves */
+    max-height: 500px; /* Altura máxima para la animación */
+    opacity: 0; /* Inicialmente invisible */
+}
+
+/* Cambia el color del encabezado al pasar el ratón */
+.faq-question:hover {
+    background: #333; /* Fondo ligeramente más claro en hover */
+    color: #fff;
+    transform: scale(1.02); /* Escala ligeramente el elemento */
+}
+
+/* Mostrar la respuesta al hacer clic en la pregunta */
+.faq-item.active .faq-answer {
+    display: block;
+    opacity: 1; /* Muestra la respuesta */
+}
+
+/* Diseño adaptativo */
+@media (max-width: 768px) {
+    .table-of-contents {
+        display: none; /* Oculta la tabla de contenido en pantallas pequeñas */
+    }
+}
+
+/* Mostrar tabla de contenidos en pantallas grandes */
+@media (min-width: 768px) {
+    .table-of-contents {
+        display: block; /* Muestra la tabla de contenidos */
+        top: 60px; /* Ajusta la posición según el menú */
+        left: 100%; /* Posición desde el lado izquierdo */
+        width: auto; /* Ancho automático para contenido */
+   }
+}
+
+/* Estilo del botón para mostrar la tabla de contenidos en pantallas pequeñas */
+.toggle-table-of-contents {
+    display: none; /* Oculta el botón por defecto */
+    background-color: #1c1c1c; /* Fondo oscuro */
+    color: #e50914; /* Color del texto */
+    border: none;
+    padding: 10px;
+    margin: 12px 0; /* Ajusta el margen para alinearlo con la tabla de contenidos */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    left: 0; /* Posición desde el lado izquierdo */
+    top: 60px; /* Ajusta la posición para que esté en la misma línea que la tabla de contenidos */
+    margin-bottom: 15px;
+    margin-right: 170px;
+}
+
+/* Mostrar el botón en pantallas pequeñas */
+@media (max-width: 767px) {
+    .toggle-table-of-contents {
+        display: block; /* Muestra el botón en pantallas pequeñas */
+    }
+}
