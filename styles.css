@@ -244,6 +244,29 @@ a {
   border-radius: 6px; /* Bordes redondeados */
 }
 
+/* Resultados de búsqueda */
+#search-results {
+  margin-top: 10px;
+  background-color: #000; /* Fondo negro */
+  border-radius: 6px; /* Bordes redondeados */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  display: none;
+}
+
+/* Enlaces de los resultados */
+#search-results a {
+  display: block;
+  padding: 10px 15px; /* Espaciado coherente */
+  border-bottom: 1px solid #333; /* Borde inferior más oscuro */
+  text-decoration: none;
+  color: #fff; /* Texto en blanco */
+  border-radius: 6px;
+}
+
+/* Hover en los resultados */
+#search-results a:hover {
+  background-color: #555; /* Cambio a gris oscuro al pasar el mouse */
+}
 
 .nav .navOpenBtn,
 .nav .navCloseBtn {
