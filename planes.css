@@ -34,7 +34,7 @@
 }
 
 .card .price {
-    font-size: 1.5em; /* Tamaño de fuente más grande para el precio */
+    font-size: 1.0em; /* Tamaño de fuente más grande para el precio */
     margin: 10px 0;
     color: #e50914; /* Color destacado del precio */
 }
