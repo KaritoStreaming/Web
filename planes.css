@@ -74,6 +74,232 @@
     transform: scale(1.05); /* Efecto de aumento en el botón */
 }
 
+/* Estilo general para las modales */
+.modal {
+    display: none; /* Oculta las modales por defecto */
+    position: fixed;
+    z-index: 1000; /* Asegura que las modales estén por encima del contenido */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Alto completo */
+    overflow: auto; /* Habilita desplazamiento si es necesario */
+    background-color: rgba(0, 0, 0, 0.85); /* Fondo semi-transparente más oscuro */
+}
+
+/* Contenido de la modal */
+.modal-content {
+    background-color: #141414; /* Fondo oscuro similar a Netflix */
+    margin: 10% auto; /* Margen superior, centrado horizontal */
+    padding: 20px;
+    border: 1px solid #444; /* Borde sutil */
+    border-radius: 12px; /* Esquinas más redondeadas */
+    width: 90%; /* Ancho de la modal */
+    max-width: 600px; /* Ancho máximo */
+    color: #fff; /* Color del texto */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5); /* Sombra para mayor profundidad */
+    animation: fadeIn 0.4s; /* Animación de aparición suave */
+}
+
+/* Animación de aparición suave */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilo del botón de cerrar */
+.close {
+    color: #e50914; /* Color rojo para el icono de cerrar */
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #ff4747; /* Color rojo más brillante al pasar el mouse */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilo del título */
+.modal-content h2 {
+    margin: 0 0 10px; /* Espaciado del título */
+    font-size: 24px; /* Tamaño de fuente del título */
+    font-weight: 600; /* Negrita para el título */
+    color: #d40812;
+}
+
+/* Estilo del texto y listas */
+.modal-content p, 
+.modal-content ul {
+    line-height: 1.6; /* Espaciado entre líneas */
+}
+
+/* Estilo para el mensaje de advertencia */
+#warnings {
+    background-color: rgba(255, 80, 80, 0.2); /* Fondo suave para advertencias */
+    color: #ff0000; /* Texto rojo */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 8px; /* Esquinas redondeadas */
+    margin-bottom: 15px; /* Espaciado inferior */
+    border: 1px solid #ff0000; /* Borde rojo */
+    display: none; /* Ocultar por defecto */
+}
+
+/* Estilo de los botones */
+.btn-buy-now {
+    background-color: #e50914; /* Fondo rojo del botón */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 4px; /* Esquinas redondeadas */
+    cursor: pointer; /* Cursor de puntero */
+    transition: background-color 0.3s, transform 0.3s; /* Transición suave */
+    font-size: 16px; /* Tamaño de fuente */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para el botón */
+}
+
+.btn-buy-now:hover {
+    background-color: #ff4747; /* Color de fondo al pasar el mouse */
+    transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+}
+
+/* Efecto de desenfoque al abrir la modal */
+.modal.open {
+    backdrop-filter: blur(5px); /* Desenfoque del fondo */
+}
+
+/* Estilo de los formularios */
+form {
+    display: flex; /* Flexbox para alineación */
+    flex-direction: column; /* Columna para los elementos del formulario */
+}
+
+/* Estilo de los labels */
+label {
+    margin-bottom: 5px; /* Espaciado inferior de los labels */
+}
+
+/* Estilo de los inputs y selects */
+input, select {
+    padding: 10px; /* Espaciado interno */
+    margin-bottom: 15px; /* Espaciado inferior */
+    border: 2px solid #444; /* Borde */
+    border-radius: 4px; /* Bordes redondeados */
+    background-color: #333; /* Fondo de los inputs */
+    color: #fff; /* Texto blanco */
+    font-size: 16px; /* Tamaño de fuente */
+    width: 45%; /* Ancho del 45% */
+    display: inline-block; /* Para permitir el alineamiento en línea */
+}
+
+.formulario__inputt{
+    padding: 10px; /* Espaciado interno */
+    margin-bottom: 15px; /* Espaciado inferior */
+    border: 2px solid #444; /* Borde */
+    border-radius: 4px; /* Bordes redondeados */
+    background-color: #333; /* Fondo de los inputs */
+    color: #fff; /* Texto blanco */
+    font-size: 16px; /* Tamaño de fuente */
+    width: 15%;
+}
+/* Estilo al enfocar los inputs y selects */
+input:focus, select:focus {
+    border-color: #ff0000; /* Cambio de color del borde al enfocar */
+    outline: none; /* Quitar el contorno por defecto */
+}
+
+
+
+/* Estilo para el contenedor del spinner */
+.spinner-container {
+    position: fixed; /* Fijo para cubrir toda la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro con opacidad */
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    z-index: 10000; /* Asegurarse de que esté encima de otros elementos, incluido el modal */
+    display: none; /* Ocultar por defecto */
+}
+
+.small-spinner {
+    border: 4px solid rgba(255, 0, 0, 0.3); /* Color del borde con transparencia */
+    border-top: 4px solid red; /* Color del borde superior en rojo */
+    border-radius: 50%; /* Hacerlo circular */
+    width: 30px; /* Ancho del spinner */
+    height: 30px; /* Alto del spinner */
+    animation: spin 1s linear infinite; /* Animación de rotación */
+    position: relative; /* Posicionamiento relativo */
+    margin: 20px auto; /* Centrado horizontal y margen superior/inferior */
+}
+
+/* Estilo para el spinner */
+.spinner {
+    border: 5px solid rgba(255, 255, 255, 0.3); /* Borde blanco */
+    border-top: 5px solid red; /* Parte superior roja para el efecto de neón */
+    border-radius: 50%; /* Redondear */
+    width: 60px; /* Ancho del spinner */
+    height: 60px; /* Altura del spinner */
+    animation: spin 1s linear infinite; /* Animación de giro */
+}
+
+/* Animación de giro */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.metodo-pago {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0;
+}
+
+.metodo-pago label {
+    cursor: pointer;
+    text-align: center;
+}
+
+.metodo-img {
+    width: 80px; /* Tamaño reducido */
+    height: 80px; /* Tamaño reducido */
+    border-radius: 50%; /* Hacer la imagen circular */
+    border: 2px solid transparent; /* Borde transparente */
+    transition: border 0.3s, transform 0.3s; /* Añadir transición para el efecto al pasar el mouse */
+}
+
+.metodo-pago input[type="radio"] {
+    display: none; /* Ocultar los botones de radio */
+}
+
+.metodo-pago input[type="radio"]:checked + .metodo-img {
+    border-color: #ff0000; /* Color del borde cuando está seleccionado */
+    transform: scale(1.1); /* Aumentar ligeramente el tamaño al seleccionar */
+}
+
+.metodo-pago label:hover .metodo-img {
+    transform: scale(1.05); /* Efecto de hover */
+}
+
+
+
+/* Estilo de la animación de cheque */
+.check-animation {
+    font-size: 50px; /* Tamaño del icono de cheque */
+    text-align: center; /* Centrar el icono */
+    animation: check-animation 1s ease forwards; /* Animación de cheque */
+}
+
+@keyframes check-animation {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+
 /* Diseño en dispositivos grandes (pantallas muy grandes) */
 @media (min-width: 1600px) {
     .pricing__container {
@@ -119,3 +345,4 @@
         width: calc(100% - 20px); /* Ajusta el ancho para ocupar la mayor parte del espacio disponible */
     }
 }
+

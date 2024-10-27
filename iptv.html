@@ -49,63 +49,230 @@
         
     </nav>
     <div class="pricing__container">
-        <div class="card">
-            <h2>Plan Magis</h2>
-            <p>Ideal para quienes buscan entretenimiento general sin complicaciones.</p>
-            <p>Accede a canales IPTV premium con calidad HD:</p>
-            <ul>
-                <li>Canales deportivos</li>
-                <li>Canales de noticias</li>
-                <li>Canales de entretenimiento</li>
-                <li>Canales internacionales</li>
-            </ul>
-            <p>Incluye soporte técnico y actualizaciones periódicas.</p>
-            <button class="btn-add-to-cart">Añadir</button>
-            <button class="btn-buy-now">Adquierelo ya</button>
-        </div>
-        <div class="card">
-            <h2>Plan Smart IPTV</h2>
-            <p>Ideal para amantes del cine y los deportes en vivo.</p>
-            <p>Disfruta de una amplia variedad de canales con calidad 4K:</p>
-            <ul>
-                <li>Canales de películas</li>
-                <li>Canales de deportes en vivo</li>
-                <li>Canales de documentales</li>
-                <li>Canales de música y cultura</li>
-            </ul>
-            <p>Incluye grabación en la nube y acceso a contenido bajo demanda.</p>
-            <button class="btn-add-to-cart">Añadir</button>
-            <button class="btn-buy-now">Adquierelo ya</button>
-        </div>
-        <div class="card">
-            <h2>Plan IPTV Premium</h2>
-            <p>Ideal para quienes desean acceso completo a contenido exclusivo y de alta calidad.</p>
-            <p>Accede a todos los canales disponibles en calidad 4K Ultra HD:</p>
-            <ul>
-                <li>Canales exclusivos de eventos</li>
-                <li>Canales internacionales en vivo</li>
-                <li>Acceso a series y películas exclusivas</li>
-                <li>Contenido premium en múltiples idiomas</li>
-            </ul>
-            <p>Incluye soporte prioritario y acceso a un servicio de atención al cliente dedicado.</p>
-            <button class="btn-add-to-cart">Añadir</button>
-            <button class="btn-buy-now">Adquierelo ya</button>
-        </div>
-        <div class="card">
-            <h2>Plan Personalizado IPTV</h2>
-            <p>Ideal para quienes desean flexibilidad y personalización en su contenido.</p>
-            <p>Elige tus canales y servicios de IPTV personalizados:</p>
-            <ul>
-                <li>Canales locales y globales</li>
-                <li>Contenido a la carta</li>
-                <li>Canales temáticos</li>
-            </ul>
-            <p>Diseña tu plan a medida con la opción de añadir o quitar canales según tus preferencias.</p>
-            <button class="btn-add-to-cart">Añadir</button>
-            <button class="btn-buy-now">Adquierelo ya</button>
-        </div>
+        <form id="formulario" class="formulario">
+            <div class="card">
+                <h2>Plan Magis</h2>
+                <p>Ideal para quienes buscan entretenimiento general sin complicaciones.</p>
+                <p>Accede a canales IPTV premium con calidad HD:</p>
+                <ul>
+                    <li>Canales deportivos</li>
+                    <li>Canales de noticias</li>
+                    <li>Canales de entretenimiento</li>
+                    <li>Canales internacionales</li>
+                </ul>
+                <p>Incluye soporte técnico y actualizaciones periódicas.</p>
+                <button type="button" class="btn-add-to-cart">Añadir</button>
+                <button class="btn-buy-now" data-plan="Magis" data-plan-id="plan_magis">Adquierelo ya</button>
+            </div>
+        </form>
+    
+        <form id="formulario-smart" class="formulario">
+            <div class="card">
+                <h2>Plan Smart IPTV</h2>
+                <p>Ideal para amantes del cine y los deportes en vivo.</p>
+                <p>Disfruta de una amplia variedad de canales con calidad 4K:</p>
+                <ul>
+                    <li>Canales de películas</li>
+                    <li>Canales de deportes en vivo</li>
+                    <li>Canales de documentales</li>
+                    <li>Canales de música y cultura</li>
+                </ul>
+                <p>Incluye grabación en la nube y acceso a contenido bajo demanda.</p>
+                <button type="button" class="btn-add-to-cart">Añadir</button>
+                <button class="btn-buy-now" data-plan="SmartIPTV" data-plan-id="plan_smart_ipTV">Adquierelo ya</button>
+            </div>
+        </form>
+    
+        <form id="formulario-premium" class="formulario">
+            <div class="card">
+                <h2>Plan IPTV Premium</h2>
+                <p>Ideal para quienes desean acceso completo a contenido exclusivo y de alta calidad.</p>
+                <p>Accede a todos los canales disponibles en calidad 4K Ultra HD:</p>
+                <ul>
+                    <li>Canales exclusivos de eventos</li>
+                    <li>Canales internacionales en vivo</li>
+                    <li>Acceso a series y películas exclusivas</li>
+                    <li>Contenido premium en múltiples idiomas</li>
+                </ul>
+                <p>Incluye soporte prioritario y acceso a un servicio de atención al cliente dedicado.</p>
+                <button type="button" class="btn-add-to-cart">Añadir</button>
+                <button class="btn-buy-now" data-plan="IPTVPremium" data-plan-id="plan_ipTV_premium">Adquierelo ya</button>
+            </div>
+        </form>
+    
+        <form id="formulario-personalizado" class="formulario">
+            <div class="card">
+                <h2>Plan Personalizado IPTV</h2>
+                <p>Ideal para quienes desean flexibilidad y personalización en su contenido.</p>
+                <p>Elige tus canales y servicios de IPTV personalizados:</p>
+                <ul>
+                    <li>Canales locales y globales</li>
+                    <li>Contenido a la carta</li>
+                    <li>Canales temáticos</li>
+                </ul>
+                <p>Diseña tu plan a medida con la opción de añadir o quitar canales según tus preferencias.</p>
+                <button type="button" class="btn-add-to-cart">Añadir</button>
+                <button class="btn-buy-now" data-plan="PersonalizadoIPTV" data-plan-id="plan_personalizado_ipTV">Adquierelo ya</button>
+            </div>
+        </form>
     </div>
     
+        <!-- Modal de Detalles del Plan Magis -->
+        <div class="modal" id="modal-plan_magis">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modal-plan_magis')">&times;</span>
+                <h2>Detalles del Plan Magis</h2>
+                <p>Con el Plan Magis, tendrás acceso a una amplia variedad de canales que incluyen deportes, noticias y entretenimiento familiar. Disfruta de una experiencia sin complicaciones, con soporte técnico 24/7 y actualizaciones periódicas para mantener tu servicio siempre al día.</p>
+                <div class="small-spinner"></div>
+                <button class="btn-buy-now" id="btnComprarMagis" onclick="comprarPlan(this)" style="display: none;" data-plan="Magis" data-plan-id="plan_magis">Comprar Ya</button>
+            </div>
+        </div>
+
+
+    <!-- Modal de Detalles del Plan Smart IPTV -->
+    <div class="modal" id="modal-plan_smart_ipTV">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-plan_smart_ipTV')">&times;</span>
+            <h2>Detalles del Plan Smart IPTV</h2>
+            <p>El Plan Smart IPTV está diseñado para los amantes del cine y los deportes en vivo. Ofrece una experiencia enriquecida con grabación en la nube y acceso a un vasto catálogo de contenido bajo demanda, garantizando que nunca te pierdas tus programas favoritos.</p>
+            <button class="btn-buy-now" onclick="comprarPlan(this)" data-plan="SmartIPTV" data-plan-id="plan_smart_ipTV">Comprar Ya</button>
+        </div>
+    </div>
+
+    <!-- Modal de Detalles del Plan IPTV Premium -->
+    <div class="modal" id="modal-plan_ipTV_premium">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-plan_ipTV_premium')">&times;</span>
+            <h2>Detalles del Plan IPTV Premium</h2>
+            <p>El Plan IPTV Premium te brinda acceso total a contenido exclusivo y de alta calidad. Disfruta de canales internacionales y eventos únicos, además de recibir soporte prioritario para resolver cualquier duda o inconveniente rápidamente.</p>
+            <button class="btn-buy-now" onclick="comprarPlan(this)" data-plan="IPTVPremium" data-plan-id="plan_ipTV_premium">Comprar Ya</button>
+        </div>
+    </div>
+
+    <!-- Modal de Detalles del Plan Personalizado IPTV -->
+    <div class="modal" id="modal-plan_personalizado_ipTV">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal-plan_personalizado_ipTV')">&times;</span>
+            <h2>Detalles del Plan Personalizado IPTV</h2>
+            <p>Con el Plan Personalizado IPTV, tendrás la libertad de elegir los canales que más te interesen, incluyendo opciones locales y globales. Crea una experiencia a tu medida y ajusta tu selección de contenido según tus preferencias, asegurando que siempre tengas lo que deseas ver.</p>
+            <button class="btn-buy-now" onclick="comprarPlan(this)" data-plan="PersonalizadoIPTV" data-plan-id="plan_personalizado_ipTV">Comprar Ya</button>
+        </div>
+    </div>
+
+        
+        <!-- Modal Proceso 1: Datos del Cliente -->
+        <div class="modal" id="modalProceso1">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modalProceso1')">&times;</span>
+                <h2>Datos del Cliente</h2>
+                <!-- Grupo: Nombre -->
+                <div class="formulario__grupo" id="grupo__nombre">
+                    <label for="nombre" class="formulario__label">Nombre</label>
+                    <div class="formulario__grupo-input">
+                        <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Introducir nombre..." required>
+                    </div>
+                </div>
+
+                <!-- Grupo: Teléfono -->
+                <div class="formulario__grupo" id="grupo__telefono">
+                    <label for="numero" class="formulario__label">Número de Celular</label>
+                    <div class="formulario__grupo-input">
+                        <select id="prefijo" class="formulario__inputt">
+                            <option value="+51">+51</option>
+                            <option value="+57">+57</option>
+                            <option value="+58">+58</option>
+                        </select>
+                        <input type="tel" class="formulario__input" id="numero" placeholder="Número de teléfono" required pattern="\d{7,}">
+                    </div>
+                </div>
+
+                <!-- Grupo: Correo Electrónico -->
+                <div class="formulario__grupo" id="grupo__correo">
+                    <label for="correo" class="formulario__label">Correo</label>
+                    <div class="formulario__grupo-input">
+                        <input type="email" class="formulario__input" name="correo" id="correo" placeholder="Introducir correo" required>  
+                    </div>
+                </div>
+
+                <!-- Grupo: País -->
+                <div class="formulario__grupo" id="grupo__pais">
+                    <label for="pais" class="formulario__label">País:</label>
+                    <div class="formulario__grupo-input">
+                    <select id="pais" onchange="actualizarCiudades()" class="formulario__input" required>
+                        <option value="">Selecciona un país</option>
+                        <option value="Colombia">Colombia</option>
+                        <option value="Venezuela">Venezuela</option>
+                        <option value="Perú">Perú</option>
+                    </select>
+                </div>
+
+                <!-- Grupo: Ciudad -->
+                <div class="formulario__grupo" id="grupo__ciudad">
+                     <div class="formulario__grupo-input">
+                    <label for="ciudad" class="formulario__label">Ciudad:</label>
+                    <select id="ciudad" class="formulario__input" required>
+                        <option value="">Selecciona una ciudad</option>
+                    </select>
+                </div>
+
+                <div class="formulario__grupo formulario__grupo-btn-enviar">
+                    <button type="button" onclick="verificarInfo()" class="formulario__btn">Verificar Información</button>
+                    <div id="infoVerificacion" style="display: none; margin-top: 10px;"></div>
+                    <button type="button" id="btnSiguiente" style="display: none;" onclick="procesarInfo()" class="formulario__btn">Siguiente</button>
+                    <div id="loadingSpinner" class="spinner-container" style="display: none;">
+                        <div class="spinner"></div>
+                    </div>
+                </div>
+
+                <p id="warnings" class="formulario__mensaje" style="display: none;"></p>
+            </div>
+        </div>
+
+        <!-- Modal Proceso 2: Resumen de la Información -->
+        <div class="modal" id="modalProceso2">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modalProceso2')">&times;</span>
+                <h2>Resumen de Información</h2>
+                <div id="resumenInfo"></div>
+                <button id="btnEditar" onclick="editarInfo()">Editar Información</button>
+                <button id="btnSiguienteProceso2" onclick="siguientePaso()">Siguiente</button>
+            </div>
+        </div>
+
+        <!-- Modal Proceso 3: Método de Pago -->
+        <div class="modal" id="modalProceso3">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modalProceso3')">&times;</span>
+                <h2>Método de Pago</h2>
+                <p>Selecciona tu método de pago:</p>
+                
+                <div class="metodo-pago">
+                    <label>
+                        <input type="radio" name="metodoPago" value="yape" checked>
+                        <img src="m1.png" alt="Método de Pago Yape" class="metodo-img">
+                    </label>
+                    <label>
+                        <input type="radio" name="metodoPago" value="nequi">
+                        <img src="m2.png" alt="Método de Pago Nequi" class="metodo-img">
+                    </label>
+                </div>
+
+                <button onclick="pagar()">Pagar</button>
+                <div id="loadingSpinner" class="spinner-container" style="display: none;">
+                    <div class="spinner"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de Gracias -->
+        <div class="modal" id="modalGracias">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modalGracias')">&times;</span>
+                <h2>¡Gracias por su compra!</h2>
+                <p>Espere que nuestro asesor hable con usted.</p>
+                <div class="check-animation">✔️</div>
+            </div>
+        </div>
     </div>
 <footer class="footer">
     <div class="footer-logo">
