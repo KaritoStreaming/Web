@@ -145,13 +145,16 @@ function siguientePaso() {
 document.getElementById('btnEditar').onclick = editarInfo;
 document.getElementById('btnSiguienteProceso2').onclick = siguientePaso;
 
-// Función para pagar
 function pagar() {
-  const nombre = document.getElementById('nombre').value.trim();
-  const numero = document.getElementById('numero').value.trim();
-  const correo = document.getElementById('correo').value.trim();
-  const pais = document.getElementById('pais').value;
-  const ciudad = document.getElementById('ciudad').value;
+  // Obtener todos los valores del formulario
+  const form = document.getElementById('form-seleccion-servicios');
+  const formData = new FormData(form);
+
+  const nombre = formData.get('nombre').trim();
+  const numero = formData.get('numero').trim();
+  const correo = formData.get('correo').trim();
+  const pais = formData.get('pais');
+  const ciudad = formData.get('ciudad');
   const metodoPago = document.querySelector('input[name="metodoPago"]:checked');
 
   if (!metodoPago) {
@@ -164,12 +167,36 @@ function pagar() {
   const planNombre = window.selectedPlan.name; 
   const planId = window.selectedPlan.id;
 
+  // Obtener los servicios seleccionados automáticamente desde el formulario
+  const serviciosSeleccionados = [];
+  const servicios = form.querySelectorAll('input[name="servicio"]:checked');
+  
+  servicios.forEach(servicio => {
+      serviciosSeleccionados.push(servicio.value);
+  });
+
+  // Crear el texto de los servicios seleccionados
+  const serviciosTexto = serviciosSeleccionados.length > 0 
+      ? `Servicios Seleccionados: ${serviciosSeleccionados.join(', ')}`
+      : 'No se seleccionaron servicios.';
+
   // Construir el mensaje de WhatsApp
-  const mensaje = `Hola, me gustaría realizar una compra.\nNombre: ${nombre}\nNúmero: ${numero}\nCorreo: ${correo}\nPaís: ${pais}\nCiudad: ${ciudad}\nMétodo de Pago: ${metodoPagoValor}\nPlan: ${planNombre}\nID del Plan: ${planId}`;
+  const mensaje = `Hola, me gustaría realizar una compra.\n
+      Nombre: ${nombre}\n
+      Número: ${numero}\n
+      Correo: ${correo}\n
+      País: ${pais}\n
+      Ciudad: ${ciudad}\n
+      Método de Pago: ${metodoPagoValor}\n
+      Plan: ${planNombre}\n
+      ID del Plan: ${planId}\n
+      ${serviciosTexto}`;
+
+  // Número de WhatsApp al que se enviará el mensaje
   const numeroWhatsApp = "+51 918 451 635";
   const urlWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${encodeURIComponent(mensaje)}`;
 
-  // Redirigir a WhatsApp
+  // Abrir el enlace de WhatsApp en una nueva ventana/pestaña
   window.open(urlWhatsApp, '_blank');
 
   // Esperar 2 segundos y luego mostrar la modal de gracias
@@ -178,11 +205,3 @@ function pagar() {
       openModal('modalGracias'); // Abrir la modal de gracias
   }, 3000);
 }
-
-// Asignar el evento a todos los botones "Adquierelo ya"
-document.querySelectorAll('.btn-buy-now').forEach(button => {
-  button.addEventListener('click', function(event) {
-      event.preventDefault(); // Prevenir el comportamiento por defecto
-      comprarPlan(this); // Pasar el botón que fue clickeado
-  });
-});

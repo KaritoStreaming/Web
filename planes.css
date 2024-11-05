@@ -346,3 +346,184 @@ input:focus, select:focus {
     }
 }
 
+
+/* Estilos responsive */
+@media (max-width: 768px) {
+    input {
+        width: 90%; /* Ancho completo en pantallas pequeñas */
+    }
+
+    select {
+        width: 40%; /* Ancho ajustado para el select en pantallas pequeñas */
+        display: inline-block; /* Mantener alineación en línea */
+    }
+
+    .formulario__inputt{
+        width: 25%;
+    }
+
+}
+
+/* Estilos para pantallas muy pequeñas (ej. móviles) */
+@media (max-width: 480px) {
+    input, select {
+        font-size: 14px; /* Tamaño de fuente más pequeño */
+    }
+}
+
+/* Estilos generales para el modal de selección de servicios */
+#modalProceso0 {
+    display: none; /* Oculta el modal por defecto */
+    position: fixed;
+    z-index: 1000; /* Asegura que esté encima de otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Fondo semi-transparente oscuro */
+    overflow: auto; /* Habilita desplazamiento si es necesario */
+}
+
+/* Contenido del modal */
+#modalProceso0 .modal-content {
+    background-color: #141414; /* Fondo oscuro similar a las tarjetas */
+    color: #fff; /* Color de texto blanco */
+    border-radius: 12px; /* Bordes redondeados */
+    width: 90%;
+    max-width: 600px;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #444; /* Borde sutil */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5); /* Sombra para mayor profundidad */
+    animation: fadeIn 0.4s; /* Animación de aparición suave */
+}
+
+/* Animación de aparición suave */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Título dentro del modal */
+#modalProceso0 h2 {
+    font-size: 24px; /* Tamaño del título */
+    font-weight: 600;
+    color: #d40812; /* Rojo destacado */
+    margin-bottom: 15px;
+}
+
+/* Estilo del párrafo dentro del modal */
+#modalProceso0 p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Estilo de los checkboxes */
+#modalProceso0 form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaciado entre los checkboxes */
+}
+
+/* Estilo de cada etiqueta de checkbox */
+#modalProceso0 form label {
+    font-size: 1em;
+    color: #e5e5e5;
+    margin-bottom: 8px;
+    display: inline-flex; /* Usamos inline-flex para alinear con el checkbox */
+    align-items: center; /* Alineamos el checkbox con el texto */
+    gap: 10px; /* Espaciado entre checkbox y texto */
+}
+
+/* Estilo del mensaje de advertencia */
+#seleccionAviso {
+    color: red;
+    display: none;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+/* Botón de confirmar selección */
+#modalProceso0 button[type="button"] {
+    background-color: #e50914; /* Rojo destacado */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    margin-top: 20px;
+}
+
+#modalProceso0 button[type="button"]:hover {
+    background-color: #d40812; /* Color más oscuro al pasar el ratón */
+    transform: scale(1.05); /* Efecto de aumento */
+}
+
+/* Estilo del botón de cerrar */
+#modalProceso0 .close {
+    color: #e50914; /* Color del icono de cerrar */
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+}
+
+#modalProceso0 .close:hover {
+    color: #ff4747; /* Color más brillante al pasar el ratón */
+    text-decoration: none;
+}
+
+
+
+/* Estilo general para los checkboxes */
+input[type="checkbox"] {
+    -webkit-appearance: none; /* Eliminar apariencia por defecto */
+    -moz-appearance: none;
+    appearance: none;
+    width: 24px; /* Tamaño del checkbox */
+    height: 24px;
+    border-radius: 50%; /* Bordes redondeados en forma de círculo */
+    background-color: #141414; /* Fondo negro */
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s; /* Transiciones suaves */
+    border: 2px solid #444; /* Borde gris oscuro */
+    display: inline-block;
+    vertical-align: middle; /* Alinea verticalmente con el texto */
+}
+
+/* Estilo cuando el checkbox está seleccionado */
+input[type="checkbox"]:checked {
+    background-color: #e50914; /* Fondo rojo cuando está seleccionado */
+    border-color: #e50914; /* Borde rojo */
+}
+
+/* Crear un check (marca de verificación) cuando está seleccionado */
+input[type="checkbox"]:checked::after {
+    content: '✔'; /* Usamos el símbolo de check */
+    position: absolute;
+    top: 50%; /* Centrado vertical */
+    left: 50%; /* Centrado horizontal */
+    transform: translate(-50%, -50%); /* Ajuste fino de la posición */
+    color: white; /* Color blanco para el check */
+    font-size: 18px; /* Tamaño del check */
+}
+
+/* Estilo cuando el checkbox está deshabilitado (opcional) */
+input[type="checkbox"]:disabled {
+    background-color: #333; /* Fondo gris oscuro cuando está deshabilitado */
+    border-color: #666; /* Borde gris claro */
+    cursor: not-allowed; /* Cambiar el cursor a no permitido */
+}
+
+/* Estilo cuando se pasa el mouse por encima del checkbox */
+input[type="checkbox"]:hover {
+    border-color: #e50914; /* Cambiar el borde a rojo al pasar el ratón */
+    background-color: #333; /* Fondo gris oscuro al pasar el ratón */
+}
