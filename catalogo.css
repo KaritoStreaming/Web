@@ -1,0 +1,600 @@
+/* Estilo general del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-image: url("fondo.jpg");
+    background-size: cover; /* El fondo se ajusta para cubrir toda la pantalla */
+    background-position: center; /* Centra la imagen en la pantalla */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed; /* Hace que el fondo se quede fijo al hacer scroll */
+    min-height: 100vh; /* Garantiza que el fondo cubra toda la altura de la ventana */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden; /* Evitar barras laterales horizontales */
+    box-sizing: border-box;
+}
+
+/* Fondo borroso y oscuro */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: -1;
+}
+
+
+/* Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Unique Header Styles */
+.unique-header {
+    padding: 100px 20px 50px 20px; /* Reducir el padding superior para que no se superponga */
+    text-align: center;
+    background-color: rgba(20, 20, 20, 0.6); /* Fondo negro con 60% de opacidad */
+    color: white;
+}
+
+.unique-header .main-title {
+    font-size: 2.5rem; /* Reducir un poco el tamaño para que sea más proporcionado */
+    margin: 0;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* Sombra más suave */
+}
+
+.unique-header .main-description {
+    font-size: 1.2rem; /* Reducir el tamaño para una mejor proporción */
+    margin-top: 10px;
+    color: #ccc;
+}
+
+/* Contenedor general de filtros */
+.filters-container {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: rgba(0, 0, 0, 1.0); /* Fondo oscuro para que se resalten los filtros */
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Estilo del botón principal de filtros */
+.filter-btn {
+    background: none;  /* Sin fondo */
+    color: white;  /* Color de texto blanco */
+    border: 2px solid white;  /* Borde blanco */
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;  /* Transición suave para el hover */
+}
+
+.filter-btn:hover {
+    background-color: rgba(255, 0, 0, 0.2);  /* Rojo opaco al hacer hover */
+    border-color: #ff4d4d;  /* Borde rojo */
+}
+
+.filter-btn:focus {
+    outline: none;  /* Eliminar borde al hacer foco */
+}
+
+/* Estilo para el ícono en el botón */
+.filter-icon {
+    font-size: 18px;  /* Tamaño del ícono */
+}
+
+/* Estilo del contenedor de opciones de filtro */
+.filter-options {
+    display: none;  /* Ocultar por defecto, se mostrará con JavaScript */
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Estilo de cada grupo de filtro */
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.filter-group label {
+    color: white;  /* Etiquetas en blanco */
+    font-size: 14px;
+}
+
+/* Estilo para los select de filtros */
+.filter-select {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    transition: border-color 0.3s ease;
+}
+
+.filter-select:hover,
+.filter-select:focus {
+    border-color: #ff4d4d;  /* Borde rojo opaco al hacer hover o foco */
+}
+
+/* Botón de aplicar filtros */
+.apply-btn {
+    background: none;
+    color: white;
+    border: 2px solid white;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.apply-btn:hover {
+    background-color: rgba(255, 0, 0, 0.2);  /* Rojo opaco */
+    border-color: #ff4d4d;  /* Borde rojo */
+}
+
+.apply-btn:focus {
+    outline: none;  /* Eliminar borde al hacer foco */
+}
+
+/* Agregar un pequeño margen para que no se pegue al borde */
+.sales-item {
+    margin-bottom: 20px;  /* Añadir margen en la parte inferior para separación */
+}
+
+
+/* Catalog Styles */
+.catalog {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 20px;
+}
+
+/* Sales Item Styles */
+.sales-item {
+    background-color: rgb(20, 20, 20);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.sales-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+}
+
+
+
+/* Asegura que todas las imágenes de la página tengan el mismo tamaño */
+.sales-item img {
+    max-width: 200px; /* Todas las imágenes dentro de los items (plataformas) tendrán un tamaño uniforme */
+    height: auto;
+    display: block; /* Asegura que las imágenes se muestren correctamente como bloque */
+    margin: 0 auto; /* Centra las imágenes dentro de su contenedor */
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+
+
+.sales-item:hover img {
+    transform: scale(1.05); /* Zoom en imagen */
+}
+
+.sales-item-title h3 {
+    font-size: 1.6rem;
+    margin-top: 15px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.sales-buy-button {
+    display: block;
+    margin: 10px auto 20px; /* Agrega espacio entre el título y el botón */
+    background-color: transparent; /* Fondo transparente */
+    border: 2px solid #fff; /* Borde blanco */
+    color: #fff; /* Texto blanco */
+    padding: 6px 12px; /* Tamaño más pequeño */
+    font-size: 16px; /* Texto más pequeño */
+    border-radius: none;
+    cursor: pointer;
+    transition: border-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    text-align: center; /* Alinea el texto en el centro */
+}
+
+.sales-buy-button:hover {
+    border-color: #ff0000; /* Borde rojo al pasar el cursor */
+    color: #ff0000; /* Texto rojo */
+    background-color: transparent; /* Fondo transparente */
+    transform: scale(1.05); /* Escala ligeramente el botón */
+}
+
+/* "Próximamente" label on top of image */
+.coming-soon {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 0, 0, 0.8); /* Fondo rojo fuerte */
+    color: white;
+    font-size: 18px;
+    padding: 7px 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    z-index: 1;
+    text-align: center;
+}
+
+/* Modal */
+.modal {
+    display: none; /* El modal está oculto por defecto */
+    position: fixed;
+    z-index: 99999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro pero sutil */
+    animation: fadeIn 0.4s ease; /* Animación de aparición */
+}
+
+/* Animación de aparición del modal */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Contenido del modal */
+.modal-content {
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro, menos opaco */
+    margin: 10% auto;
+    padding: 25px;
+    border-radius: 12px; /* Bordes redondeados */
+    width: 90%;
+    max-width: 480px; /* Maximo ancho ajustado */
+    position: relative;
+    text-align: center;
+    animation: slideIn 0.5s ease-out; /* Animación de deslizamiento */
+}
+
+/* Animación para el contenido del modal */
+@keyframes slideIn {
+    from {
+        transform: translateY(-30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Estilo para la imagen dentro del modal */
+.modal-content img {
+    width: 50%;
+    height: 50%; /* Imagen con altura fija para un aspecto cuadrado */
+    object-fit: cover; /* Ajustar la imagen al contenedor sin distorsión */
+    border-radius: 8px; /* Bordes ligeramente redondeados */
+    margin-bottom: 25px; /* Separación del contenido */
+    animation: zoomIn 0.4s ease-out; /* Animación de entrada */
+}
+
+
+
+/* Animación para la imagen */
+@keyframes zoomIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Título del modal */
+.modal-content h2 {
+    font-size: 26px;
+    color: #fff;
+    margin-bottom: 15px;
+    font-weight: 500; /* Peso moderado para un look más limpio */
+}
+
+/* Descripción del modal */
+.modal-content p {
+    font-size: 16px;
+    color: #ccc; /* Gris más suave */
+    margin-bottom: 25px;
+    line-height: 1.5; /* Mejor legibilidad */
+}
+
+/* Estilo para el botón de comparar */
+.modal-content button {
+    background-color: #ff0008; /* Color más suave de rojo */
+    border: 2px solid #ff0008;
+    color: #fff;
+    padding: 12px 28px;
+    font-size: 18px;
+    border-radius: 5px; /* Bordes cuadrado pero con una ligera suavidad */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: auto;
+    margin-top: 10px;
+    animation: popIn 0.3s ease-out; /* Animación de aparición */
+}
+
+/* Animación para el botón de comparar */
+@keyframes popIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Efecto hover en el botón */
+.modal-content button:hover {
+    background-color: #000000; /* Rojo más oscuro */
+    transform: translateY(-2px); /* Desplazamiento sutil al hacer hover */
+}
+
+/* Estilo mejorado para el botón de cierre */
+.modal-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px; /* Más arriba y a la derecha para que no cubra la imagen */
+    font-size: 28px; /* Tamaño más grande de la X */
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro para contraste */
+    border-radius: 50%; /* Redondeo completo */
+    width: 35px; /* Ajustamos el tamaño */
+    height: 35px; /* Ajustamos el tamaño */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 0;
+}
+
+/* Hover y efecto de enfoque para el botón de cierre */
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo ligeramente más oscuro */
+    transform: scale(1.1); /* Ligera animación de agrandamiento */
+}
+
+.modal-close-btn:active {
+    transform: scale(0.95); /* Efecto al hacer clic */
+}
+
+.modal-close-btn:focus {
+    outline: none; /* Sin contorno para una apariencia más limpia */
+}
+
+/* Opcional: Fondo del modal con desenfoque suave */
+.modal-content img {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra sutil alrededor de la imagen */
+}
+
+
+/* General Footer Styles */
+.footer {
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Logo Section */
+.footer-logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footer-logo .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-logo .logo-icon {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+    filter: invert(100%); /* Logo blanco */
+}
+
+/* Footer Container */
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+/* Footer Sections */
+.footer-section {
+    flex: 1 1 200px;
+    margin: 10px;
+    min-width: 200px; /* Ajustado para mejor ajuste horizontal */
+}
+
+.footer-section h3 {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    font-weight: 300; /* Fuente fina */
+}
+
+.footer-section p,
+.footer-section ul {
+    margin: 0;
+    padding: 0;
+    font-weight: 300;
+}
+
+/* Footer Links */
+.footer-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-list li {
+    margin-bottom: 10px;
+}
+
+.footer-link,
+.footer-social-link {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    font-size: 0.9em; /* Fuente fina */
+}
+
+.footer-link i,
+.footer-social-link i {
+    margin-right: 10px;
+}
+
+.footer-link:hover,
+.footer-social-link:hover {
+    color: #e50914; /* Efecto hover rojo */
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+    text-align: center;
+    padding: 20px 10px; /* Ajuste de padding para reducir espacio en los bordes */
+    border-top: 1px solid #444;
+    margin-top: 20px;
+}
+
+/* Contenedor de íconos de pago */
+.payment-icons-container {
+    display: flex;
+    justify-content: center; /* Centra el contenedor de íconos horizontalmente */
+    align-items: center; /* Alinea verticalmente el contenedor de íconos */
+    margin-top: 20px; /* Espacio adicional antes de los íconos de pago */
+    width: 100%; /* Asegura que el contenedor ocupe el ancho completo disponible */
+    min-width: 200px;
+}
+
+/* Contenedor interno de los íconos */
+.payment-icons {
+    display: flex;
+    justify-content: center; /* Centra los íconos horizontalmente dentro del contenedor */
+    align-items: center; /* Alinea verticalmente los íconos */
+    gap: 10px; /* Espacio entre los íconos */
+    padding: 20px 0; /* Espacio arriba y abajo de los íconos */
+    max-width: 100%; /* Asegura que no se desborde del contenedor */
+    margin: 0; /* Alinea el contenedor interno horizontalmente */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+/* Estilo para los íconos de pago */
+.payment-icons img {
+    width: 50px; /* Tamaño ajustado para íconos de tarjeta */
+    height: auto; /* Mantiene la proporción de las imágenes */
+    transition: transform 0.3s, opacity 0.3s; /* Transiciones suaves para hover */
+    opacity: 0.9; /* Opacidad ligeramente reducida */
+    border-radius: 2px;
+}
+
+.payment-icons img:hover {
+    transform: scale(1.1); /* Aumenta el tamaño del ícono en el hover */
+    opacity: 1; /* Restaura la opacidad en hover */
+}
+
+
+/* Social Media Icons */
+.footer-social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Aumentar el espacio entre íconos */
+    margin-top: 20px; /* Ajustar el margen superior si es necesario */
+}
+
+.footer-social-icons a {
+    color: #fff;
+    font-size: 24px; /* Aumentar el tamaño de los íconos */
+    transition: color 0.3s;
+}
+
+.footer-social-icons a:hover {
+    color: #e50914; /* Color de hover para íconos de redes sociales */
+}
+
+
+/* Estilos para el catálogo */
+.catalog {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 20px;
+}
+
+/* Ajustes para pantallas pequeñas (como móviles y tablets) */
+@media (max-width: 768px) {
+    .catalog {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas pequeñas */
+        gap: 15px; /* Espacio más pequeño entre los ítems */
+    }
+}
+
+/* Opcional: Ajuste para pantallas muy pequeñas (como teléfonos en modo vertical) */
+@media (max-width: 480px) {
+    .catalog {
+        grid-template-columns: 1fr; /* Una sola columna en pantallas muy pequeñas */
+        gap: 10px; /* Reduce el espacio entre los ítems */
+    }
+}

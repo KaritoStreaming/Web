@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Plataformas de Streaming y IPTV</title>
+    <link rel="stylesheet" href="catalogo.css">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="icon" href="icono2.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/0e4216b0b7.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="nav">
+        <i class="uil uil-bars navOpenBtn"></i>
+        <a href="#" class="logo">
+            <img src="icono2.png" alt="Logo Icono" class="logo-icon">
+            Karito <span>Streaming</span>
+        </a>
+        <ul class="nav-links">
+            <i class="uil uil-times navCloseBtn"></i>
+            <li><a href="index.html">Inicio</a></li>
+            <li class="dropdown">
+                <a href="#" class="servicios-link">
+                    Servicios
+                    <i class="fas fa-chevron-down icono-pequeno"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="streaming.html">Streaming</a></li>
+                    <li><a href="iptv.html">IPTV</a></li>
+                    <li><a href="musica.html">Música</a></li>
+                </ul>
+            </li>
+            <li><a href="sobre nosotros.html">Acerca de Nosotros</a></li>
+        </ul>
+        <i class="uil uil-search search-icon" id="searchIcon"></i>
+        <div class="search-box">
+            <i class="uil uil-search search-icon"></i>
+            <input type="text" id="search-input" placeholder="Buscas..." />
+            <div id="search-results"></div>
+        </div>
+    </nav>
+
+    <!-- Div Principal que sustituye al header -->
+    <div class="unique-header">
+        <h1 class="main-title">Catálogo de Plataformas de Streaming y IPTV</h1>
+        <p class="main-description">Explora y adquiere las mejores plataformas de streaming y IPTV, ¡todo en un solo lugar!</p>
+    </div>
+
+<!-- Filtros -->
+<div class="filters-container">
+    <!-- Botón de Filtros -->
+    <button id="filter-btn" class="filter-btn">
+        Filtros <span class="filter-icon">▼</span>
+    </button>
+    
+    <!-- Contenedor de opciones de filtro -->
+    <div id="filter-options" class="filter-options">
+        <!-- Filtro por Categoría -->
+        <div class="filter-group">
+            <label for="category-filter">Categoría</label>
+            <select id="category-filter" class="filter-select">
+                <option value="all">Todas</option>
+                <option value="streaming">Streaming</option>
+                <option value="iptv">IPTV</option>
+            </select>
+        </div>
+
+        <!-- Filtro por Plataforma -->
+        <div class="filter-group">
+            <label for="platform-filter">Plataforma</label>
+            <select id="platform-filter" class="filter-select">
+                <option value="all">Todas las plataformas</option>
+                <option value="netflix">Netflix</option>
+                <option value="hbomax">HBO Max</option>
+                <option value="spotify">Spotify</option>
+                <option value="vix">ViX</option>
+            </select>
+        </div>
+
+        <!-- Filtro por Relevancia -->
+        <div class="filter-group">
+            <label for="relevance-filter">Relevancia</label>
+            <select id="relevance-filter" class="filter-select">
+                <option value="all">Todas</option>
+                <option value="high">Alta</option>
+                <option value="medium">Media</option>
+                <option value="low">Baja</option>
+            </select>
+        </div>
+
+        <!-- Filtro por Disponibilidad -->
+        <div class="filter-group">
+            <label for="availability-filter">Disponibilidad</label>
+            <select id="availability-filter" class="filter-select">
+                <option value="all">Todas</option>
+                <option value="available">Disponible</option>
+                <option value="coming-soon">Próximamente</option>
+            </select>
+        </div>
+
+        <!-- Botón para aplicar filtros -->
+        <button id="apply-filters" class="apply-btn">Aplicar Filtros</button>
+        <!-- Botón para restablecer los filtros -->
+<button id="reset-filters" class="apply-btn">Restablecer Filtros</button>
+
+    </div>
+</div>
+
+
+  <!-- Catálogo de plataformas -->
+<div class="catalog">
+    <!-- Streaming Services -->
+    <div class="sales-item streaming" id="spotify" data-relevance="high">
+        <img src="spotify.png" alt="Spotify">
+        <div class="sales-item-title">
+            <h3>Spotify</h3>
+        </div>
+        <button class="sales-buy-button" data-title="Spotify" data-description="Spotify es la plataforma líder en streaming de música y podcasts." data-image="spotify.png">Adquiere</button>
+    </div>
+
+    <div class="sales-item streaming" id="netflix" data-relevance="high">
+        <img src="netflix.png" alt="Netflix">
+        <div class="sales-item-title">
+            <h3>Netflix</h3>
+        </div>
+        <button class="sales-buy-button" data-title="Netflix" data-description="Netflix es una plataforma de streaming de series y películas, con producciones exclusivas como *Stranger Things*." data-image="netflix.png">Adquiere</button>
+    </div>
+
+    <div class="sales-item streaming" id="hbomax" data-relevance="medium">
+        <img src="hbomax.png" alt="HBO Max">
+        <div class="sales-item-title">
+            <h3>HBO Max</h3>
+        </div>
+        <button class="sales-buy-button" data-title="HBO Max" data-description="HBO Max ofrece una amplia gama de contenido, incluyendo series originales como *Game of Thrones*." data-image="hbomax.png">Adquiere</button>
+    </div>
+
+    <div class="sales-item streaming" id="amazonprime" data-relevance="high">
+        <img src="amazon.png" alt="Amazon Prime">
+        <div class="sales-item-title">
+            <h3>Amazon Prime</h3>
+        </div>
+        <button class="sales-buy-button" data-title="Amazon Prime" data-description="Amazon Prime incluye contenido original como *The Boys* y *The Marvelous Mrs. Maisel*." data-image="amazon.png">Adquiere</button>
+    </div>
+
+    <div class="sales-item streaming" id="disneyplus" data-relevance="high">
+        <img src="disney.png" alt="Disney Plus">
+        <div class="sales-item-title">
+            <h3>Disney+</h3>
+        </div>
+        <button class="sales-buy-button" data-title="Disney+" data-description="Disney+ ofrece las mejores películas y series de Disney, Marvel, Star Wars y National Geographic." data-image="disneyplus.png">Adquiere</button>
+    </div>
+
+    <div class="sales-item streaming" id="paramountplus" data-relevance="medium">
+        <img src="para.png" alt="Paramount Plus">
+        <div class="sales-item-title">
+            <h3>Paramount+</h3>
+        </div>
+        <button class="sales-buy-button" data-title="Paramount+" data-description="Paramount+ ofrece acceso a contenido exclusivo de CBS, Paramount Pictures y deportes en vivo." data-image="paramountplus.png">Adquiere</button>
+    </div>
+
+    <div class="sales-item streaming" id="youtube" data-relevance="high">
+        <img src="youtube.png" alt="YouTube" class="video-img">
+        <div class="sales-item-title">
+            <h3>YouTube Premium</h3>
+        </div>
+        <button class="sales-buy-button" data-title="YouTube Premium" data-description="YouTube Premium elimina anuncios, ofrece contenido exclusivo y YouTube Music." data-image="youtube.png">Adquiere</button>
+    </div>
+
+    <!-- IPTV Services -->
+    <div class="sales-item iptv" id="ibo" data-relevance="medium">
+        <img src="ibo.png" alt="IBO Player">
+        <div class="sales-item-title">
+            <h3>IBO Player</h3>
+        </div>
+        <button class="sales-buy-button" data-title="IBO Player" data-description="IBO Player permite ver canales en vivo y contenido a la carta a través de IPTV." data-image="ibo.png">Adquiere</button>
+    </div>
+
+    <div class="sales-item iptv" id="xciptv" data-relevance="low">
+        <img src="xciptv.png" alt="XCIPTV">
+        <div class="sales-item-title">
+            <h3>XCIPTV</h3>
+        </div>
+        <button class="sales-buy-button" data-title="XCIPTV" data-description="XCIPTV es una app IPTV que ofrece acceso a una gran variedad de canales de televisión en vivo." data-image="xciptv.png">Adquiere</button>
+    </div>
+
+    <!-- Movistar Play -->
+    <div class="sales-item streaming" id="movistarplay-item" data-relevance="medium">
+        <img src="movistarplay.png" alt="Movistar Play">
+        <div class="sales-item-title">
+            <h3>Movistar Play</h3>
+        </div>
+        <button class="sales-buy-button" id="movistarplay-btn" data-title="Movistar Play" data-description="Movistar Play es una plataforma de streaming de televisión que ofrece acceso a una gran variedad de canales en vivo, películas y series bajo demanda. Disponible en múltiples dispositivos." data-image="movistarplay.png">Adquiere</button>
+    </div>
+
+    <!-- Flujo TV -->
+    <div class="sales-item" id="flujo-tv-item" data-relevance="low">
+        <img src="magis.jpg" alt="Flujo TV" class="video-img">
+        <div class="sales-item-title">
+            <h3>Flujo TV</h3>
+        </div>
+        <button class="sales-buy-button" id="flujo-tv-btn" data-title="Flujo TV" data-description="Flujo TV proporciona televisión a través de internet, ofreciendo acceso a una amplia variedad de canales en vivo y contenido bajo demanda. Disfruta de tus programas favoritos sin necesidad de antenas ni cable." data-image="magis.jpg">Adquiere</button>
+    </div>
+
+    <!-- ViX -->
+    <div class="sales-item" id="vix-item" data-relevance="high">
+        <img src="vix.jpg" alt="ViX">
+        <div class="sales-item-title">
+            <h3>ViX</h3>
+        </div>
+        <button class="sales-buy-button" id="vix-btn" data-title="ViX" data-description="ViX es una plataforma de streaming con contenido en español, incluyendo telenovelas, series, películas y deportes en vivo. Es conocida por su gran oferta de programación gratuita y su enfoque en el público hispanohablante." data-image="vix.jpg">Adquiere</button>
+    </div>
+
+    <!-- Legacy TV -->
+    <div class="sales-item" id="legacy-item" data-relevance="low">
+        <img src="legazy.jpg" alt="Legacy TV">
+        <div class="sales-item-title">
+            <h3>Legacy TV</h3>
+        </div>
+        <button class="sales-buy-button" id="legacy-btn" data-title="Legacy TV" data-description="Legacy TV es un servicio de IPTV que proporciona acceso a una amplia gama de canales de televisión en vivo y contenido bajo demanda, con un enfoque en la calidad y la estabilidad." data-image="legazy.jpg">Adquiere</button>
+    </div>
+
+    <!-- DirecTV -->
+    <div class="sales-item streaming" id="directv-item" data-relevance="high">
+        <img src="directv.png" alt="DirecTV">
+        <div class="sales-item-title">
+            <h3>DirecTV</h3>
+        </div>
+        <button class="sales-buy-button" id="directv-btn" data-title="DirecTV" data-description="DirecTV es un proveedor de televisión por satélite que ofrece una amplia variedad de canales en vivo, deportes y contenido bajo demanda. Disfruta de la mejor programación en calidad HD." data-image="directv.png">Adquiere</button>
+    </div>
+
+    <!-- Crunchyroll -->
+    <div class="sales-item streaming" id="crunchyroll-item" data-relevance="medium">
+        <img src="crunchyroll.png" alt="Crunchyroll">
+        <div class="sales-item-title">
+            <h3>Crunchyroll</h3>
+        </div>
+        <button class="sales-buy-button" id="crunchyroll-btn" data-title="Crunchyroll" data-description="Crunchyroll es una plataforma de streaming especializada en anime. Ofrece una gran variedad de series, películas y simulcast en tiempo real desde Japón." data-image="crunchyroll.png">Adquiere</button>
+    </div>
+
+
+        <!-- Hulu -->
+        <div class="sales-item streaming" id="hulu" data-relevance="low">
+            <img src="hulu.png" alt="Hulu">
+            <div class="coming-soon">Próximamente</div>
+            <div class="sales-item-title">
+                <h3>Hulu</h3>
+            </div>
+            <button class="sales-buy-button" disabled>Próximamente</button>
+        </div>
+
+        <!-- Apple TV+ -->
+        <div class="sales-item streaming" id="appleplus" data-relevance="medium">
+            <img src="appleplus.png" alt="Apple TV Plus">
+            <div class="coming-soon">Próximamente</div>
+            <div class="sales-item-title">
+                <h3>Apple TV+</h3>
+            </div>
+            <button class="sales-buy-button" disabled>Próximamente</button>
+        </div>
+
+        <!-- IPTV Smarters -->
+        <div class="sales-item iptv" id="iptvsmarters" data-relevance="low">
+            <img src="iptvsmarters.png" alt="IPTV Smarters">
+            <div class="coming-soon">Próximamente</div>
+            <div class="sales-item-title">
+                <h3>IPTV Smarters</h3>
+            </div>
+            <button class="sales-buy-button" disabled>Próximamente</button>
+        </div>
+
+        <!-- Perfect Player -->
+        <div class="sales-item iptv" id="perfectplayer" data-relevance="low">
+            <img src="perfectplayer.png" alt="Perfect Player IPTV">
+            <div class="coming-soon">Próximamente</div>
+            <div class="sales-item-title">
+                <h3>Perfect Player</h3>
+            </div>
+            <button class="sales-buy-button" disabled>Próximamente</button>
+        </div>
+
+        <!-- Tivimate -->
+        <div class="sales-item iptv" id="tivimate" data-relevance="medium">
+            <img src="tivimate.png" alt="Tivimate">
+            <div class="coming-soon">Próximamente</div>
+            <div class="sales-item-title">
+                <h3>Tivimate</h3>
+            </div>
+            <button class="sales-buy-button" disabled>Próximamente</button>
+        </div>
+
+        <!-- SIPTV -->
+        <div class="sales-item iptv" id="siptv" data-relevance="low">
+            <img src="siptv.png" alt="SIPTV">
+            <div class="coming-soon">Próximamente</div>
+            <div class="sales-item-title">
+                <h3>SIPTV</h3>
+            </div>
+            <button class="sales-buy-button" disabled>Próximamente</button>
+        </div>
+
+</div>
+
+
+<!-- Añadir más plataformas según sea necesario -->
+<!-- Streaming y IPTV Services -->
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close-btn">&times;</span>
+            <img id="modal-image" src="" alt="">
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+            <button id="modal-buy-button">Comprar Ya</button>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="footer-logo">
+            <a href="#" class="logo">
+                <img src="icono.svg" alt="Logo Icono" class="logo-icon">
+                Karito Streaming
+            </a>
+        </div>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Compañía</h3>
+                <ul class="footer-list">
+                    <li><a href="sobre nosotros.html" class="footer-link">Nosotros</a></li>
+                    <li><a href="servicios.html" class="footer-link">Servicios</a></li>
+                    <li><a href="politica.html" class="footer-link">Política</a></li>
+                    <li><a href="politica.html" class="footer-link">Privacidad</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Tienda</h3>
+                <ul class="footer-list">
+                    <li><a href="streaming.html" class="footer-link">Streaming</a></li>
+                    <li><a href="iptv.html" class="footer-link">IPTV</a></li>
+                    <li><a href="musica.html" class="footer-link">Música</a></li>
+                    <li><a href="servicios.html" class="footer-link">Nuestros Servicios</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Ayuda</h3>
+                <ul class="footer-list">
+                    <li><a href="preguntas.html" class="footer-link">Preguntas</a></li>
+                    <li><a href="compras.html" class="footer-link">Compras</a></li>
+                    <li><a href="pagos.html" class="footer-link">Método de Pago</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Siguenos</h3>
+                <div class="footer-social-icons">
+                      <a href="https://facebook.com" target="_blank" class="footer-social-link"><i class="fab fa-facebook-f"></i></a>
+                      <a href="https://twitter.com" target="_blank" class="footer-social-link"><i class="fa-brands fa-x-twitter"></i></a>
+                      <a href="https://instagram.com" target="_blank" class="footer-social-link"><i class="fab fa-instagram"></i></a>
+                      <a href="https://linkedin.com" target="_blank" class="footer-social-link"><i class="fab fa-whatsapp"></i></a>
+               </div>
+            </div>
+            </div>
+        </div>
+
+
+    </div>
+        <div class="footer-payment">
+            <div class="payment-icons">
+                <img src="m1.png" alt="Método de Pago 1">
+                <img src="m2.png" alt="Método de Pago 2">
+                <img src="m3.png" alt="Método de Pago 3">
+                <img src="m4.png" alt="Método de Pago 4">
+            </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Karito Streaming. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="catalogo.js"></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo general del cuerpo */
+body {
+    font-family: 'Arial', sans-serif;
+    color: #e5e5e5; /* Color del texto */
+    background-image: url("https://tclelectronics.co.nz/wp-content/uploads/tcl-Best-Streaming-Apps-2022.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    position: relative;
+}
+
+/* Fondo borroso y oscuro */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Un poco más oscuro */
+    backdrop-filter: blur(15px); /* Aumentar el efecto de desenfoque */
+    z-index: -1;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px; /* Máximo ancho para pantallas grandes */
+    padding: 40px; /* Más padding para dar más espacio */
+    background-color: rgba(34, 34, 34, 0.9); /* Fondo más oscuro y semi-transparente */
+    border-radius: 12px; /* Esquinas más redondeadas */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7); /* Sombra más pronunciada */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+}
+
+/* Efecto de elevación al pasar el mouse */
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 50px rgba(0, 0, 0, 0.9);
+}
+
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 2em; /* Aumentar el tamaño del título */
+    color: #e50914; /* Color de Netflix para el título */
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* Para alinear los elementos verticalmente */
+}
+
+input {
+    margin-bottom: 15px; /* Espaciado mayor entre campos */
+    padding: 12px; /* Mayor padding */
+    border: 1px solid #555; /* Bordes grises */
+    border-radius: 4px;
+    background-color: #444; /* Fondo de los campos de entrada */
+    color: #e5e5e5; /* Color del texto */
+    transition: border-color 0.3s; /* Transición suave para el borde */
+}
+
+/* Efecto de enfoque para el input */
+input:focus {
+    outline: none; /* Sin contorno */
+    border-color: #e50914; /* Bordes rojos al enfocar */
+    background-color: #555; /* Fondo ligeramente más claro al enfocar */
+}
+
+/* Estilo para el placeholder */
+input::placeholder {
+    color: #cccccc; /* Gris claro */
+    opacity: 0.8; /* Opacidad para dar un efecto más sutil */
+}
+
+/* También puedes añadir un efecto de enfoque para el placeholder */
+input:focus::placeholder {
+    color: #aaaaaa; /* Un gris un poco más oscuro al enfocar */
+}
+
+
+/* Estilo del botón de envío */
+.submit-button {
+    padding: 12px;
+    background-color: #e50914; /* Rojo Netflix */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold; /* Negrita para mayor énfasis */
+    transition: background 0.3s, transform 0.2s; /* Transiciones suaves */
+}
+
+/* Efecto hover para el botón */
+.submit-button:hover {
+    background-color: #ff4d4d; /* Un rojo más claro al pasar el ratón */
+    transform: translateY(-2px); /* Efecto de elevación */
+}
+
+/* Estilos para los mensajes de error */
+.error {
+    color: red; /* Color rojo para los mensajes de error */
+    font-size: 0.9em; /* Tamaño de fuente un poco más pequeño */
+    margin-top: -5px; /* Espaciado negativo para acercar el mensaje al campo */
+    margin-bottom: 10px; /* Espaciado adicional */
+}
+
+/* Estilos para el pie de página */
+.footer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.footer a {
+    color: #e5e5e5;
+    text-decoration: none;
+    transition: color 0.3s; /* Transición suave para el color */
+}
+
+.footer a:hover {
+    color: #e50914; /* Cambiar el color al pasar el ratón */
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Ocupa el 90% en pantallas pequeñas */
+    }
+}

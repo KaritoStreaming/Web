@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Código para el modal
     const modal = document.getElementById('modal');
-    const closeBtn = document.querySelector('.close-btn');
+    const closeBtn = document.querySelector('.modal-close-btn');
     const modalImage = document.getElementById('modal-image');
     const modalTitle = document.getElementById('modal-title');
     const modalDescription = document.getElementById('modal-description');
@@ -19,6 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
             modalDescription.textContent = description;
 
             modal.style.display = 'block';
+            
+            // Guarda el título del servicio seleccionado para WhatsApp
+            modalBuyButton.setAttribute('data-service', title);
         });
     });
 
@@ -86,5 +89,14 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', function() {
         updateVisibleItems();
         toggleScrollbar();
+    });
+
+    // Redirige a WhatsApp cuando se haga clic en el botón "Comprar Ya"
+    modalBuyButton.addEventListener('click', () => {
+        const serviceTitle = modalBuyButton.getAttribute('data-service'); // Obtiene el servicio seleccionado
+        const whatsappLink = `https://api.whatsapp.com/send?phone=+51 918 451 635&text=Hola, estoy interesado en esta plataforma de streaming: ${serviceTitle}. ¿Qué planes tiene?`;
+
+        window.open(whatsappLink, '_blank'); // Abre WhatsApp en una nueva pestaña
+        modal.style.display = 'none'; // Cierra el modal después de abrir WhatsApp
     });
 });

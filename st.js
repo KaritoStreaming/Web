@@ -300,7 +300,7 @@ function verificarInfo() {
         : 'No se seleccionaron servicios.';
 
       // Construir el mensaje de WhatsApp
-  const mensaje = `Hola, me gustaría realizar una compra.\nNombre: ${nombre}\nNúmero: ${numero}\nCorreo: ${correo}\nPaís: ${pais}\nCiudad: ${ciudad}\nMétodo de Pago: ${metodoPagoValor}\nPlan: ${planNombre}\n${serviciosTexto}`;
+  const mensaje = `Hola, me gustaría realizar una compra.\nNombre: ${nombre}\nNúmero: ${numero}\nCorreo: ${correo}\nPaís: ${pais}\nCiudad: ${ciudad}\nMétodo de Pago: ${metodoPagoValor}\nPlan: ${planNombre}\nID del Plan: ${planId}\nServicios:${serviciosTexto}`;
   const numeroWhatsApp = "+51 918 451 635";
   const urlWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${encodeURIComponent(mensaje)}`;
 

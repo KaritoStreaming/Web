@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
-    background-image: url("https://tclelectronics.co.nz/wp-content/uploads/tcl-Best-Streaming-Apps-2022.jpg");
+    background-image: url("fondo.jpg");
     background-size: cover; /* El fondo se ajusta para cubrir toda la pantalla */
     background-position: center; /* Centra la imagen en la pantalla */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -26,7 +26,7 @@ body::before {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
     z-index: -1;
 }
 
@@ -724,3 +724,85 @@ header h2 {
     vertical-align: middle; /* Alinea verticalmente el ícono con el texto */
 }
 
+/* Estilo mejorado para el nuevo botón de cierre */
+.modal-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    color: #fff; /* Blanco para la X */
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo sutil para mayor contraste */
+    border-radius: 50%; /* Forma circular */
+    width: 35px; /* Tamaño ajustado */
+    height: 35px; /* Tamaño ajustado */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Animación suave */
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo más oscuro al pasar el mouse */
+    transform: scale(1.1); /* Efecto de agrandamiento */
+}
+
+.modal-close-btn:active {
+    transform: scale(0.95); /* Efecto al hacer clic */
+}
+
+.modal-close-btn:focus {
+    outline: none; /* Quitamos el contorno para mantenerlo limpio visualmente */
+}
+
+.ver-todo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    padding-left: 20px;
+    transition: color 0.3s ease-in-out; /* Transición para el cambio de color del texto */
+}
+
+.ver-todo-text {
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 10px;
+    transition: color 0.3s ease-in-out; /* Transición para el color del texto */
+}
+
+.ver-todo-circle {
+    color: white; /* Color inicial de la flecha */
+    font-size: 14px; /* Tamaño reducido de la flecha */
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px; /* Círculo más pequeño */
+    height: 24px; /* Círculo más pequeño */
+    border: 2px solid white; /* Borde blanco del círculo */
+    border-radius: 50%; /* Borde redondeado */
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out; /* Transición para el cambio de color y borde */
+    cursor: pointer;
+}
+
+/* Estilo de hover en el contenedor para cambiar color de texto y círculo al mismo tiempo */
+.ver-todo-container:hover {
+    color: #f40612; /* Cambia el color del texto */
+}
+
+.ver-todo-container:hover .ver-todo-circle {
+    color: #f40612; /* Cambia el color del círculo */
+    border-color: #f40612; /* Cambia el borde del círculo */
+}
+
+/* Estilo cuando se hace clic */
+.ver-todo-container:active {
+    color: #b20710; /* Rojo más oscuro para el texto */
+}
+
+.ver-todo-container:active .ver-todo-circle {
+    color: #b20710; /* Rojo más oscuro para el círculo */
+    border-color: #b20710; /* Borde más oscuro al hacer clic */
+}
